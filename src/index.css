@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Kurale&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+@theme {
+  /*Colors*/
+  --yellow-color :#edcf5d;
+  --black-color : #010101;
+  --gray-color :#a4a4a4;
+  --bague-color :#f2f0ea;
+
+  /*Font*/
+  --font-kurale: 'Kurale', sans-serif;
+
+  /*customize break Points*/
+  --breakpoint-xxxs: 280px;
+  --breakpoint-xxs: 350px;
+  --breakpoint-xs: 450px;
+}
+
+.bg-yellow {
+  background-color: var(--yellow-color);
+}
+
+.bg-blacke {
+  background-color: var(--black-color);
+}
+
+.bg-gray  {
+  background-color: var(--gray-color);
+}
+
+.bg-bague {
+  background-color: var(--bague-color);
+}
+
+.text-bague {
+  color: var(--bague-color);
+}
+
+.text-yellow {
+  color: var(--yellow-color);
+}
+
+.text-black {
+  color: var(--black-color);
+}
+
+.text-kurale {
+  font-family: var(--font-kurale);
+}
+
+.input {
+  @apply border-none rounded-3xl outline-0 px-3 py-2 ;
+}
+
+
+/*category*/
+.main-style {
+  @apply border-none text-center rounded-full flex justify-center items-center ;
+}
+
+.md-category {
+  @apply  md:min-w-20 md:h-8 md:p-4 md:text-[18px];
+}
+
+
+/*plain css*/
+.container {
+  max-width: 1280px;
+  margin: auto;
+}
+
