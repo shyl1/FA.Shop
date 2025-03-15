@@ -22,6 +22,14 @@
   --breakpoint-xxxs: 280px;
   --breakpoint-xxs: 350px;
   --breakpoint-xs: 450px;
+
+  /* animation scroll*/
+  --animate-scroll : scroll 40s linear infinite;
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% * 7))}
+  }
 }
 
 .bg-yellow {
@@ -76,4 +84,5 @@
   max-width: 1280px;
   margin: auto;
 }
+
 
