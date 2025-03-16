@@ -3,7 +3,7 @@ import { NavLink }  from "react-router-dom"
 
 export default function Categories() {
   return (
-    <ul className="flex md:gap-4 justify-center items-center gap-1 sm:gap-2">
+    <ul className="flex md:gap-4 justify-center items-center gap-1 sm:gap-2 text-kurale ">
       {
         categories.map(({label, path} , index)=> (
           <li key={index} >
