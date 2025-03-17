@@ -13,8 +13,6 @@ export default function MainLayout() {
       <div className="mt-22 sm:mt-28">
         <Outlet/>
       </div>
-
-
       
       {/* <Footer /> */}
     </main>

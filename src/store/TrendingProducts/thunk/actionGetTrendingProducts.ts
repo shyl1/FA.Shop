@@ -1,32 +1,31 @@
+
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios"
-import {categories} from "@Constants/index"
 
-type responesType = {Products: {id: number , title: string ,category: string ,thumbnail: string, rating: number}[];}
-
+type responesType = {
+  id: number;
+  title: string;
+  category: string;
+  image: string,
+  rating:{count: number , rate: number};
+  price : number;
+}
 
 
 const fetchTrendingProducts = createAsyncThunk("trendingProducts/fetchTrendingProducts" , async (_ , thunkAPI)=> {
 
   const {rejectWithValue} = thunkAPI;
   try {
-    const response = await axios.get<responesType>("https://dummyjson.com/products");
+    const response = await axios.get<responesType[]>("https://fakestoreapi.com/products");
 
-    //we need to manipulate the data
-    //1- we need to get products from the response 
-    let products = response.data.Products;
+    //for fake store api i am gonna filter the api from electronics
 
-    // we need to keep in mind if there is any missing rating for a product
-    // 2- we need to filter out the categories 
-    products = products.filter((product) => categories.label.includes(product.category));
+    const filterdCategory = response.data.filter((product)=> product.category !== "electronics");
 
-    //sort by rating (get the highest rating products)
-    products.sort((a,b) => b.rating - a.rating);
+  // Sort products based on rating (descending order)
+  const products = filterdCategory.sort((a, b) => b.rating.rate - a.rating.rate);
 
-    //console.log(products.slice(0,6));
-
-    //return the top 6 products
-    return products.slice(0,6);
+  return products.slice(0, 5); // Return top 6 trending products
   } catch (error) {
     /* to make the axios deals with the error that axios can understand use a garud*/
     if (axios.isAxiosError(error)){

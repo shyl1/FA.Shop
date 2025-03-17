@@ -20,7 +20,7 @@ export default function Carousel() {
           {
             autoSlider.map(({Id : id, ImageUrl :img})=>( 
               <SwiperSlide key={id} className="w-full h-full ">
-                <img src={img} className="w-full h-full object-fill"  />
+                <img src={img} className="w-full h-full object-fill" loading="lazy" />
               </SwiperSlide>
             ))
           }

@@ -36,6 +36,8 @@ export const categories : Category[] = [
 ];
 
 
+
+
 // Define the type for headerIcons
 type HeaderIcon = {
   Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import tendingProducts from "./TrendingProducts/trendingproductsSlice";
+import trendingProducts from "./TrendingProducts/trendingproductsSlice";
 
 export const store = configureStore({
-  reducer: {tendingProducts},
+  reducer: {trendingProducts},
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
