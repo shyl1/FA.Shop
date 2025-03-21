@@ -1,6 +1,6 @@
 import TrendingProducts from '@components/eCommerce/TrendingProducts'
 import Categories from '@components/shared/Categories'
-import AutoCarousel from '@components/slider/AutoCarousel'
+//import AutoCarousel from '@components/slider/AutoCarousel'
 
 export default function Home() {
   return (
@@ -10,9 +10,9 @@ export default function Home() {
       </div>
 
      {/* auto slider without swiper.js */}
-    <div className='mt-7 sm:mt-10'>
+    {/* <div className='mt-7 sm:mt-10'>
       <AutoCarousel />
-    </div>
+    </div> */}
 
     <div className='mt-20 max-md:mt-7'>
       <TrendingProducts />
