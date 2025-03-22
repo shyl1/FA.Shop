@@ -2,7 +2,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios"
 
-type responesType = {
+type responeseType = {
   id: number;
   title: string;
   category: string;
@@ -16,10 +16,9 @@ const fetchTrendingProducts = createAsyncThunk("trendingProducts/fetchTrendingPr
 
   const {rejectWithValue} = thunkAPI;
   try {
-    const response = await axios.get<responesType[]>("https://fakestoreapi.com/products");
+    const response = await axios.get<responeseType[]>("https://fakestoreapi.com/products");
 
     //for fake store api i am gonna filter the api from electronics
-
     const filterdCategory = response.data.filter((product)=> product.category !== "electronics");
 
   // Sort products based on rating (descending order)
