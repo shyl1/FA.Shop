@@ -1,3 +1,4 @@
+import NewArrivals from '@components/eCommerce/NewArrivals'
 import TrendingProducts from '@components/eCommerce/TrendingProducts'
 import Categories from '@components/shared/Categories'
 //import AutoCarousel from '@components/slider/AutoCarousel'
@@ -16,6 +17,10 @@ export default function Home() {
 
     <div className='mt-20 max-md:mt-7'>
       <TrendingProducts />
+    </div>
+
+    <div className='mt-20 max-md:mt-7'>
+      <NewArrivals />
     </div>
 
     </section>

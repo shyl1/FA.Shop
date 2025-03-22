@@ -1,5 +1,5 @@
 import { Heart , ShoppingCart ,Avatar } from "@assets/icons/svg/index";
-import {banner1, banner2,banner3,  banner4 , banner5, banner6 } from "@assets/images";
+import {banner1, banner2,banner3,  banner4 , banner5, banner6, MenShirt1, MenShirt2, MenShirt3, WomenDress } from "@assets/images";
 
 
 //Define the type for Categories
@@ -98,6 +98,28 @@ export const autoSlider : autoSliderImages[] = [
     ImageUrl: banner6,
   },
 ];
+
+
+/* silder for new arrivals */
+export const NewArrival = [
+  {
+    id:1,
+    imgurl:MenShirt1,
+  },
+  {
+    id:2,
+    imgurl:MenShirt2,
+  },
+  {
+    id:3,
+    imgurl:MenShirt3,
+  },
+  {
+    id:4,
+    imgurl:WomenDress,
+  },
+];
+
 
 
 
