@@ -144,8 +144,20 @@ export const testimonial = [
 /*a constant number representing the delay time in milliseconds before switching to the next slide. */
 export const delay : number = 2500;
 
+type HrefTpe = {
+  href?: string;
+  label?: string;
+  email?: string;
+  phone?: string;
+  address?: string;
+}
 
-export const footerLinks = [
+type footerLinkType = {
+  id: number;
+  links: HrefTpe[];
+}
+
+export const footerLinks : footerLinkType[] = [
   {
     id:1 , 
     links:[
