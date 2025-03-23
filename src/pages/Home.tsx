@@ -4,6 +4,7 @@ import WomenSection from '@components/eCommerce/WomenSection'
 import Categories from '@components/shared/Categories'
 import MenSection from '@components/eCommerce/MenSection'
 import KidsSection from '@components/eCommerce/KidsSection'
+import Testimonials from '@components/eCommerce/Testimonials'
 //import AutoCarousel from '@components/slider/AutoCarousel'
 
 export default function Home() {
@@ -26,7 +27,6 @@ export default function Home() {
       <NewArrivals />
     </div>
 
-
     <div className='mt-7 md:mt-11'>
       <WomenSection />
     </div>
@@ -37,6 +37,10 @@ export default function Home() {
 
     <div className='mt-7 md:mt-11'>
       <KidsSection />
+    </div>
+
+    <div className='mt-7 md:mt-11'>
+      <Testimonials />
     </div>
     </section>
   )

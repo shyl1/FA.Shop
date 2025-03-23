@@ -8,6 +8,7 @@ import MenShirt1 from "./menshrit1.png";
 import MenShirt2 from "./menshirt2.png";
 import MenShirt3 from "./menshirt3.png";
 import WomenDress from "./blonde-young-woman-elegant-green-dress.jpg";
+import Testimonials1 from "@assets/images/testimonial-1.jpg";
 
 export {
   banner1,
@@ -20,4 +21,5 @@ export {
   MenShirt2,
   MenShirt3,
   WomenDress,
+  Testimonials1,
 };

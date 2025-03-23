@@ -1,5 +1,5 @@
 import { Heart , ShoppingCart ,Avatar } from "@assets/icons/svg/index";
-import {banner1, banner2,banner3,  banner4 , banner5, banner6, MenShirt1, MenShirt2, MenShirt3, WomenDress } from "@assets/images";
+import {banner1, banner2,banner3,  banner4 , banner5, banner6, MenShirt1, MenShirt2, MenShirt3, Testimonials1, WomenDress } from "@assets/images";
 
 
 //Define the type for Categories
@@ -120,6 +120,24 @@ export const NewArrival = [
   },
 ];
 
+
+export const testimonial = [
+  {
+    imgurl :Testimonials1 ,
+    name : "hanem hanem",
+    comment : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.",
+  } ,
+  {
+    imgurl :Testimonials1 ,
+    name : "viel hanem",
+    comment : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.",
+  }, 
+  {
+    imgurl :Testimonials1 ,
+    name : "jhon hanem",
+    comment : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.",
+  }
+];
 
 
 
