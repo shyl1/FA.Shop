@@ -1,21 +1,21 @@
 import 'swiper/swiper-bundle.css';
 import { testimonial } from "@Constants/index";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {Autoplay} from "swiper/modules";
+//import {Autoplay} from "swiper/modules";
 
 
 export default function Testimonials() {
   return (
     <section className="container mx-auto">
 
-    <div className="w-full h-1/2 md:rounded-lg bg-yellow p-5 ">
+    <div className="w-full h-1/2 md:rounded-lg bg-yellow p-5 shadow-lg">
 
       <Swiper className="w-full h-full" 
-      spaceBetween={50} 
-      modules ={[Autoplay]}
-      slidesPerView={1}
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
-      loop 
+      // spaceBetween={50} 
+      // modules ={[Autoplay]}
+      // slidesPerView={1}
+      // autoplay={{ delay: 4000, disableOnInteraction: false }}
+      // loop 
       >
         {
           testimonial.map((item, indx)=> (
