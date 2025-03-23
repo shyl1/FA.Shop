@@ -3,7 +3,7 @@ import { fetchMenProducts } from "@store/MenCategory/mencategoryslice";
 import { useEffect } from "react";
 import { Heart } from "@assets/icons/svg";
 
-export default function MenSection() {
+export default function KidsSection() {
 
   const dispatch = useAppDispatch();
   const {products , loading , error } = useAppSelector( (state) => state.menCategory);
@@ -58,7 +58,7 @@ export default function MenSection() {
       <div className="mt-7 relative">
 
         <div className="absolute top-[-10px] left-2 bg-yellow w-15 h-5 md:w-18 md:h-11  text-[15px] md:text-lg z-0 shadow-md rounded-lg flex justify-center items-center text-kurale">
-          <h4>Men</h4>
+          <h4>Kids</h4>
         </div>
 
         <div className=" relative z-50 flex lg:grid grid-cols-5 max-sm:gap-2 gap-6 md:gap-4 overflow-x-auto p-4 max-md:p-2 overflow-y-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory custom-scrollbar">

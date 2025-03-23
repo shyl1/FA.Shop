@@ -5,7 +5,7 @@ import HeaderIcons from "./HeaderIcons";
 
 export default function Header() {
   return (
-    <header className="bg-blacke w-full h-16 fixed lg:p-5 p-2 top-0 z-10 ">
+    <header className="bg-blacke w-full h-16 fixed lg:p-5 p-2 top-0 z-999 ">
 
       <nav className="container flex justify-between items-center h-full max-sm:gap-2 ">
 

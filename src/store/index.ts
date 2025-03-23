@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import trendingProducts from "./TrendingProducts/trendingproductsSlice";
 import womenCategory from "./WomenCategory/womencategoryslice";
 import menCategory from "./MenCategory/mencategoryslice";
+import kidsCategory from "./KidsCategory/kidscategoryslice";
 
 export const store = configureStore({
   reducer: {
     trendingProducts,
     womenCategory,
     menCategory,
+    kidsCategory,
   },
 })
 
