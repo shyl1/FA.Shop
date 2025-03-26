@@ -1,21 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
-type responesType = {
-  id: number;
-  title: string;
-  category: string; 
-  image: string;
-  rating: {count: number, rate: number};
-  price: number;
-};
+import { responseType } from "@components/CustomTypes/SharedTypes";
 
 const fetchMenProducts = createAsyncThunk("menCategory/fetchMenProducts",async (_ , thunkAPI)=> {
 
   const {rejectWithValue} = thunkAPI;
 
   try{
-    const reponse = await axios.get<responesType[]>("https://fakestoreapi.com/products");
+    const reponse = await axios.get<responseType[]>("https://fakestoreapi.com/products");
 
     const MenProducts = reponse.data.filter((product)=> product.category === "men's clothing");
 

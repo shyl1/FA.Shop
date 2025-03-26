@@ -16,6 +16,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@pages/*": ["src/pages/*"],
       "@routers/*" : ["src/routers/*"],
+      "@CustomTypes/*": ["src/CustomTypes/*"],
       "@services/*": ["src/services/*"],
       "@store/*": ["src/store/*"],
       "@UI/*": ["src/UI/*"],

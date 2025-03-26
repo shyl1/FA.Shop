@@ -24,7 +24,7 @@ export default function Testimonials() {
                 <img src={item.imgurl} className='rounded-full w-12 h-12 md:w-20 md:h-20'/>
                 <div className='flex flex-col '>
                   <p className='text-[10px] font-semibold md:text-sm mt-5'>{item.name}</p>
-                  <p className='text-[11px] w-[250px] md:w-[400px] mt-2'>{item.comment}</p>
+                  <p className='text-[11px] w-[250px] md:w-[400px] mt-2 md:text-lg'>{item.comment}</p>
                 </div>
               </div>
             

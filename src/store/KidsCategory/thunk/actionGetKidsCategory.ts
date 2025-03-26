@@ -1,14 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { responseType } from "@components/CustomTypes/SharedTypes";
 
-type responseType = {
-  id: number;
-  title: string;
-  category: string; 
-  image: string;
-  rating: {count: number, rate: number};
-  price: number;
-}
 
 const fetchKidesProducts = createAsyncThunk("kidsCategory/fetchKidsProducts", async (_ , thunkAPI) => {
   const {rejectWithValue} = thunkAPI;

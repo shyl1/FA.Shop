@@ -6,7 +6,7 @@ import MenSection from '@components/eCommerce/MenSection'
 import KidsSection from '@components/eCommerce/KidsSection'
 import Testimonials from '@components/eCommerce/Testimonials'
 import Subscribe from '@components/eCommerce/Subscribe'
-//import AutoCarousel from '@components/slider/AutoCarousel'
+import AutoCarousel from '@components/slider/AutoCarousel'
 
 export default function Home() {
   return (

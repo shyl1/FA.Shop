@@ -1,19 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import fetchWomenProducts from "./thunk/actionGetWomenCategory";
-
-
-type Product = {
-  id : number;
-  title: string;
-  category: string;
-  image: string;
-  rating: {count: number, rate: number};
-  price: number;
-}
+import { Product, Loading } from "@components/CustomTypes/SharedTypes";
 
 type womenCategoryType = {
   products: Product[];
-  loading: "idle" | "pending" | "failed" | "succeeded";
+  loading: Loading;
   error: null | string;
 }
 

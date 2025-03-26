@@ -1,19 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import fetchKidesProducts from "./thunk/actionGetKidsCategory";
-
-type Product = {
-  id: number;
-  title: string;
-  category: string; 
-  image: string;
-  rating: {count: number, rate: number};
-  price: number;
-}
-
+import { Product, Loading } from "@components/CustomTypes/SharedTypes";
 
 type kidsCategoryType  = {
   products: Product[];
-  loading: "idle" | "pending" | "failed" | "succeeded";
+  loading: Loading;
   error: null | string;
 }
 

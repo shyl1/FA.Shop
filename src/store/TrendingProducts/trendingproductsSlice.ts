@@ -1,18 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit"
 import fetchTrendingProducts from "./thunk/actionGetTrendingProducts";
+import { Product, Loading } from "@components/CustomTypes/SharedTypes";
 
-type Product = {
-  id: number;
-  title: string;
-  category: string;
-  image: string, 
-  rating:{count: number , rate: number};
-  price : number;
-};
 
 type trendingProductsType = {
   products: Product[];
-  loading : "idle" | "pending" | "failed" | "succeeded";
+  loading : Loading;
   error: null | string;
 }
 
