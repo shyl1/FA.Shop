@@ -1,5 +1,6 @@
-import { Heart , ShoppingCart ,Avatar } from "@assets/icons/svg/index";
+import { Heart , ShoppingCart ,Avatar} from "@assets/icons/svg/index";
 import {banner1, banner2,banner3,  banner4 , banner5, banner6, MenShirt1, MenShirt2, MenShirt3, Testimonials1, WomenDress } from "@assets/images";
+import React from "react";
 
 
 //Define the type for Categories
@@ -34,6 +35,40 @@ export const categories : Category[] = [
     label: "Sportswear"
   },
 ];
+
+// //filters for each category 
+// type CategoryFilter = {
+//   label: string;
+//   options: string[];
+// };
+
+// export const categoryFilters : CategoryFilter[] = [
+//   {
+//     label: "Size",
+//     options: ["S", "M", "L", "XL"],
+//   },
+//   {
+//     label: "Color",
+//     options: ["Red", "Blue", "Green", "Black"],
+//   },
+//   {
+//     label: "Brand",
+//     options: ["Nike", "Adidas", "Puma"],
+//   },
+// ];
+
+// type dropdownArrowsType = {
+//   Icon : React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+// }
+
+// export const dropdownArrows : dropdownArrowsType[] = [
+//   {
+//     Icon : bottomArrow,
+//   }, 
+//   {
+//     Icon : topArrow,
+//   },
+// ];
 
 
 

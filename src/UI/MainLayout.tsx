@@ -10,11 +10,11 @@ export default function MainLayout() {
       <Header/>
 
       {/* Render child pages dynamically */}
-      <div className="mt-22 sm:mt-28">
+      <div className="mt-22 sm:mt-28 ">
         <Outlet/>
       </div>
       
-      <Footer />
+      <Footer/>
     </main>
   )
 }

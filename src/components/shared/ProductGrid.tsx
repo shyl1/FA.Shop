@@ -1,5 +1,5 @@
 
-export default function ProductGrid({category} : {category :string}) {
+export default function ProductGrid() {
   return (
     <div>ProductGrid</div>
   )
