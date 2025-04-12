@@ -7,6 +7,8 @@ export default function CategoryLayout() {
   //  useParams will return an object with the params of the current route
   const {category} = useParams <{category : string}>();
 
+  console.log(category);
+
   return (
     <main className="flex container mx-auto gap-2">
       <aside>

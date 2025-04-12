@@ -6,7 +6,5 @@ const initialState = {
 }
 
 const sidebarSlice = createSlice(
-  name: "sidebar",
-  initialState,
-  reducers:{},
+  
 );
