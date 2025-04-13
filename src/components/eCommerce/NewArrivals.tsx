@@ -6,6 +6,15 @@ export default function NewArrivals() {
 
   const [index , setIndex] = useState(0);
 
+  //simulate fetching data from an API
+  // const [loading , setLoading] = useState(true);
+
+  // if(loading) {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1000); // Simulate a delay of 1 second
+  // }
+
   // to next photo
   const nextphoto = () => {
     setIndex((nextPic)=> nextPic === NewArrival.length-1  ? 0 : nextPic+1 );
