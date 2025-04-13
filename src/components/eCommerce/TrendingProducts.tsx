@@ -1,4 +1,5 @@
 import { Heart } from "@assets/icons/svg";
+import TrendingProductsSkeleton from "@components/SkeletonLoading/TrendingProductsSkeleton";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import fetchTrendingProducts from "@store/TrendingProducts/thunk/actionGetTrendingProducts";
 import { useEffect } from "react";
@@ -54,7 +55,7 @@ export default function TrendingProducts() {
       </div>
 
 
-      {loading === "pending" && <p className="text-3xl font-bold">Products are being loading</p>}
+      {loading === "pending" ? <TrendingProductsSkeleton/>: ""  } 
 
       {error && <p className="mt-5 text-red-500 flex justify-center items-center text-5xl">{error}</p>}
 

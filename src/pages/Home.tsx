@@ -10,6 +10,7 @@ import {  NewArrivals,
   AutoCarousel} from "../components/LazyComponents/lazyComponents"
 
   import { Suspense } from "react"
+import TrendingProductsSkeleton from "@components/SkeletonLoading/TrendingProductsSkeleton"
 
 export default function Home() {
   return (
@@ -27,9 +28,13 @@ export default function Home() {
       <AutoCarousel />
     </div> */}
 
-      <div className='mt-7 md:mt-20'>
-        <TrendingProducts />
-      </div>
+
+      <Suspense fallback={<TrendingProductsSkeleton/>}>
+        <div className='mt-7 md:mt-20'>
+          <TrendingProducts />
+        </div>
+      </Suspense>
+      
 
       <div className='mt-7 md:mt-20'>
         <NewArrivals />
