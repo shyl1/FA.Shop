@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export default function TrendingProductsSkeleton() {
   return (
@@ -13,7 +13,7 @@ export default function TrendingProductsSkeleton() {
     {/* trending products */}
     <div className="mt-7">
       <div className="flex lg:grid grid-cols-5 max-sm:gap-2 gap-6 md:gap-4 overflow-x-auto p-4 max-md:p-2 overflow-y-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory custom-scrollbar">
-        {Top6Products}
+        
       </div>
     </div>
 

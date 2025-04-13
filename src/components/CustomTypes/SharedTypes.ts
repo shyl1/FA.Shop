@@ -17,3 +17,8 @@ export type responseType = {
   rating: {count: number, rate: number};
   price: number;
 }
+
+export type Category = {
+  path: string;
+  label: string;
+};

@@ -1,19 +1,26 @@
-import NewArrivals from '@components/eCommerce/NewArrivals'
-import TrendingProducts from '@components/eCommerce/TrendingProducts'
-import WomenSection from '@components/eCommerce/WomenSection'
-import Categories from '@components/shared/Categories'
-import MenSection from '@components/eCommerce/MenSection'
-import KidsSection from '@components/eCommerce/KidsSection'
-import Testimonials from '@components/eCommerce/Testimonials'
-import Subscribe from '@components/eCommerce/Subscribe'
-import AutoCarousel from '@components/slider/AutoCarousel'
+import CategoriesSkeletonLoading from "@components/SkeletonLoading/CategoriesSkeletonLoading"
+import {  NewArrivals,
+  TrendingProducts,
+  WomenSection,
+  Categories,
+  MenSection,
+  KidsSection,
+  Testimonials,
+  Subscribe,
+  AutoCarousel} from "../components/LazyComponents/lazyComponents"
+
+  import { Suspense } from "react"
 
 export default function Home() {
   return (
     <section>
-      <div className='container mx-auto'>
-        <Categories />
-      </div>
+
+      <Suspense fallback= {<CategoriesSkeletonLoading/>}>
+        <div className='container mx-auto'>
+          <Categories />
+        </div>
+      </Suspense>
+      
 
      {/* auto slider without swiper.js */}
     {/* <div className='mt-7 sm:mt-10'>

@@ -1,4 +1,4 @@
-import { Heart , ShoppingCart ,Avatar, downArrow} from "@assets/icons/svg/index";
+import { Heart , ShoppingCart ,Avatar} from "@assets/icons/svg/index";
 import {banner1, banner2,banner3,  banner4 , banner5, banner6, MenShirt1, MenShirt2, MenShirt3, Testimonials1, WomenDress } from "@assets/images";
 import React from "react";
 
