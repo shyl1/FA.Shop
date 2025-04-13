@@ -11,6 +11,7 @@ import {  NewArrivals,
 
   import { Suspense } from "react"
 import TrendingProductsSkeleton from "@components/SkeletonLoading/TrendingProductsSkeleton"
+import NewArrivalsSkeletonLaoding from "@components/SkeletonLoading/NewArrivalsSkeletonLaoding"
 
 export default function Home() {
   return (
@@ -35,10 +36,12 @@ export default function Home() {
         </div>
       </Suspense>
       
-
-      <div className='mt-7 md:mt-20'>
-        <NewArrivals />
-      </div>
+      <Suspense fallback={<NewArrivalsSkeletonLaoding/>}>
+        <div className='mt-7 md:mt-20'>
+          <NewArrivals />
+        </div>
+      </Suspense>
+      
 
       <div className='mt-7 md:mt-11'>
         <WomenSection />
