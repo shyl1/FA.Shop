@@ -1,4 +1,3 @@
-import CategoriesSkeletonLoading from "@components/SkeletonLoading/CategoriesSkeletonLoading"
 import {  NewArrivals,
   TrendingProducts,
   WomenSection,
@@ -9,10 +8,12 @@ import {  NewArrivals,
   Subscribe,
   AutoCarousel} from "../components/LazyComponents/lazyComponents"
 
-  import { Suspense } from "react"
+import { Suspense } from "react"
+import CategoriesSkeletonLoading from "@components/SkeletonLoading/CategoriesSkeletonLoading"
 import TrendingProductsSkeleton from "@components/SkeletonLoading/TrendingProductsSkeleton"
 import NewArrivalsSkeletonLaoding from "@components/SkeletonLoading/NewArrivalsSkeletonLaoding"
 import AutoCarouselSkeletonLoading from "@components/SkeletonLoading/AutoCarouselSkeletonLoading"
+import WomenSectionSkeletonLoading from "@components/SkeletonLoading/WomenSectionSkeletonLoading"
 
 export default function Home() {
   return (
@@ -47,9 +48,12 @@ export default function Home() {
       </Suspense>
       
 
-      <div className='mt-7 md:mt-11'>
-        <WomenSection />
-      </div>
+      <Suspense fallback={<WomenSectionSkeletonLoading/>}>
+        <div className='mt-7 md:mt-11'>
+          <WomenSection />
+        </div>
+      </Suspense>
+      
 
       <div  className='mt-7 md:mt-11'>
         <MenSection />

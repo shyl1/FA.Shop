@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "@store/hooks"
 import { fetchWomenProducts } from "@store/WomenCategory/womencategoryslice";
 import { useEffect } from "react";
 import { Heart } from "@assets/icons/svg";
+import WomenSectionSkeletonLoading from "@components/SkeletonLoading/WomenSectionSkeletonLoading";
 
 export default function WomenSection() {
 
@@ -50,7 +51,7 @@ export default function WomenSection() {
   return (
     <section className="container mx-auto relative">
 
-      {loading === "pending" && <p className="text-3xl font-bold">Products are being loading</p>}
+      {loading === "pending" ? <WomenSectionSkeletonLoading/>: ""  } 
 
       {error && <p className="mt-5 text-red-500 flex justify-center items-center text-5xl">{error}</p>}
 
