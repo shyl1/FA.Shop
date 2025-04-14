@@ -12,6 +12,7 @@ import {  NewArrivals,
   import { Suspense } from "react"
 import TrendingProductsSkeleton from "@components/SkeletonLoading/TrendingProductsSkeleton"
 import NewArrivalsSkeletonLaoding from "@components/SkeletonLoading/NewArrivalsSkeletonLaoding"
+import AutoCarouselSkeletonLoading from "@components/SkeletonLoading/AutoCarouselSkeletonLoading"
 
 export default function Home() {
   return (
@@ -25,9 +26,12 @@ export default function Home() {
       
 
      {/* auto slider without swiper.js */}
-    {/* <div className='mt-7 sm:mt-10'>
-      <AutoCarousel />
-    </div> */}
+    {/* <Suspense fallback={<AutoCarouselSkeletonLoading />}>
+      <div className='mt-7 sm:mt-10'>
+        <AutoCarousel />
+      </div>
+    </Suspense> */}
+    
 
 
       <Suspense fallback={<TrendingProductsSkeleton/>}>
