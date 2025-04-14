@@ -14,6 +14,8 @@ import TrendingProductsSkeleton from "@components/SkeletonLoading/TrendingProduc
 import NewArrivalsSkeletonLaoding from "@components/SkeletonLoading/NewArrivalsSkeletonLaoding"
 import AutoCarouselSkeletonLoading from "@components/SkeletonLoading/AutoCarouselSkeletonLoading"
 import WomenSectionSkeletonLoading from "@components/SkeletonLoading/WomenSectionSkeletonLoading"
+import MenSectionSkeletonLoading from "@components/SkeletonLoading/MenSectionSkeletonLoading"
+import KidsSectionSkeletonLoading from "@components/SkeletonLoading/KidsSectionSkeletonLoading"
 
 export default function Home() {
   return (
@@ -25,14 +27,12 @@ export default function Home() {
         </div>
       </Suspense>
       
-
      {/* auto slider without swiper.js */}
     {/* <Suspense fallback={<AutoCarouselSkeletonLoading />}>
       <div className='mt-7 sm:mt-10'>
         <AutoCarousel />
       </div>
     </Suspense> */}
-    
 
 
       <Suspense fallback={<TrendingProductsSkeleton/>}>
@@ -47,7 +47,6 @@ export default function Home() {
         </div>
       </Suspense>
       
-
       <Suspense fallback={<WomenSectionSkeletonLoading/>}>
         <div className='mt-7 md:mt-11'>
           <WomenSection />
@@ -55,18 +54,26 @@ export default function Home() {
       </Suspense>
       
 
-      <div  className='mt-7 md:mt-11'>
-        <MenSection />
-      </div>
+      <Suspense fallback={<MenSectionSkeletonLoading/>}>
+        <div  className='mt-7 md:mt-11'>
+          <MenSection />
+        </div>
+      </Suspense>
 
-      <div className='mt-7 md:mt-11'>
-        <KidsSection />
-      </div>
+      <Suspense fallback={<KidsSectionSkeletonLoading />}>
+        <div className='mt-7 md:mt-11'>
+          <KidsSection />
+        </div>
+      </Suspense>
+      
 
-      <div className='mt-7 md:mt-11'>
-        <Testimonials />
-      </div>
-
+      <Suspense fallback={<TrendingProductsSkeleton/>}>
+        <div className='mt-7 md:mt-11'>
+          <Testimonials />
+        </div>
+      </Suspense>
+      
+      
       <div className='mt-7 md:mt-15'>
         <Subscribe />
       </div>

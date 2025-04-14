@@ -1,5 +1,5 @@
 
-export default function WomenSectionSkeletonLoading() {
+export default function KidsSectionSkeletonLoading() {
   return (
     <section className="container mx-auto">
     <div className="flex justify-center items-center flex-col mb-5">
@@ -24,7 +24,6 @@ export default function WomenSectionSkeletonLoading() {
           ))}
         </div>
 
-        
   </section>
   )
 }
