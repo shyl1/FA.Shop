@@ -2,6 +2,8 @@ import { useAppDispatch, useAppSelector } from "@store/hooks"
 import { fetchMenProducts } from "@store/MenCategory/mencategoryslice";
 import { useEffect } from "react";
 import { Heart } from "@assets/icons/svg";
+import LoadingState from "@components/feedback/Loading/LoadingState";
+import KidsSectionSkeletonLoading from "@components/SkeletonLoading/KidsSectionSkeletonLoading";
 
 export default function KidsSection() {
 
@@ -49,25 +51,17 @@ export default function KidsSection() {
 
   return (
     <section className="container mx-auto relative">
+      <LoadingState status={loading} error={error} skeleton={<KidsSectionSkeletonLoading/>}>
+        <div className="mt-7 relative">
+          <div className="absolute top-[-10px] left-2 bg-yellow w-15 h-5 md:w-18 md:h-11  text-[15px] md:text-lg z-0 shadow-md rounded-lg flex justify-center items-center text-kurale">
+            <h4>Kids</h4>
+          </div>
 
-      {loading === "pending" && <p className="text-3xl font-bold">Products are being loading</p>}
-
-      {error && <p className="mt-5 text-red-500 flex justify-center items-center text-5xl">{error}</p>}
-
-
-      <div className="mt-7 relative">
-
-        <div className="absolute top-[-10px] left-2 bg-yellow w-15 h-5 md:w-18 md:h-11  text-[15px] md:text-lg z-0 shadow-md rounded-lg flex justify-center items-center text-kurale">
-          <h4>Kids</h4>
+          <div className=" relative z-50 flex lg:grid grid-cols-5 max-sm:gap-2 gap-6 md:gap-4 overflow-x-auto p-4 max-md:p-2 overflow-y-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory custom-scrollbar">
+              {menProducts}
+          </div>
         </div>
-
-        <div className=" relative z-50 flex lg:grid grid-cols-5 max-sm:gap-2 gap-6 md:gap-4 overflow-x-auto p-4 max-md:p-2 overflow-y-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory custom-scrollbar">
-            {menProducts}
-        </div>
-
-        
-
-      </div>
+      </LoadingState>
     </section>
   )
 }

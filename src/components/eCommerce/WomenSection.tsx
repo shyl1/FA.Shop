@@ -3,6 +3,8 @@ import { fetchWomenProducts } from "@store/WomenCategory/womencategoryslice";
 import { useEffect } from "react";
 import { Heart } from "@assets/icons/svg";
 import WomenSectionSkeletonLoading from "@components/SkeletonLoading/WomenSectionSkeletonLoading";
+import LoadingState from "@components/feedback/Loading/LoadingState";
+
 
 export default function WomenSection() {
 
@@ -49,13 +51,9 @@ export default function WomenSection() {
 
 
   return (
+    
     <section className="container mx-auto relative">
-
-      {loading === "pending" ? <WomenSectionSkeletonLoading/>: ""  } 
-
-      {error && <p className="mt-5 text-red-500 flex justify-center items-center text-5xl">{error}</p>}
-
-
+      <LoadingState status={loading} error={error} skeleton={<WomenSectionSkeletonLoading/>}>
       <div className="mt-7 relative">
 
         <div className="absolute top-[-10px] left-2 bg-yellow w-15 h-5 md:w-18 md:h-11  text-[15px] md:text-lg z-0 shadow-md rounded-lg flex justify-center items-center text-kurale">
@@ -65,10 +63,8 @@ export default function WomenSection() {
         <div className=" relative z-50 flex lg:grid grid-cols-5 max-sm:gap-2 gap-6 md:gap-4 overflow-x-auto p-4 max-md:p-2 overflow-y-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory custom-scrollbar">
             {womenProducts}
         </div>
-
-        
-
       </div>
+      </LoadingState>
     </section>
   )
 }
