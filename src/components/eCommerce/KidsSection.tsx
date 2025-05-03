@@ -47,8 +47,6 @@ export default function KidsSection() {
     </div>
   )) : "there are no products for now";
 
-
-
   return (
     <section className="container mx-auto relative">
       <LoadingState status={loading} error={error} skeleton={<KidsSectionSkeletonLoading/>}>
