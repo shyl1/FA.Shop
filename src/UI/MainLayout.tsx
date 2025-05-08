@@ -6,15 +6,16 @@ import Footer from "@components/shared/Footer";
 export default function MainLayout() {
 
   return (
+    <>
+    <Header/>
     <main className="relative">
-      <Header/>
-
       {/* Render child pages dynamically */}
-      <div className="mt-22 sm:mt-28 ">
+      <div className="mt-24 sm:mt-28 ">
         <Outlet/>
       </div>
       
       <Footer/>
     </main>
+    </>
   )
 }

@@ -8,7 +8,7 @@ const fetchAccessoriesProducts = createAsyncThunk("kidsCategory/fetchKidsProduct
   try {
     const response = await axios.get<responseType[]>("https://fakestoreapi.com/products");
 
-    return response.data.filter((product)=> product.category === "Jewelery");;
+    return response.data.filter((product)=> product.category === "men's clothing");;
   } catch (error) {
       /* to make the axios deals with the error that axios can understand use a garud*/
       if (axios.isAxiosError(error)){

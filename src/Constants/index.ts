@@ -42,12 +42,13 @@ export const categories : Category[] = [
   },
 ];
 
+
 // categories thunk map
 export const categoiresThunks = {
   women : fetchWomenProducts , 
   men : fetchMenProducts , 
   kids : fetchKidesProducts,
-  shoe: fetchShoeProducts,
+  shoes: fetchShoeProducts,
   accessories: fetchAccessoriesProducts , 
   sportswear: fetchSportswearProducts,
 }

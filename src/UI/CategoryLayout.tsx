@@ -11,7 +11,7 @@ export default function CategoryLayout() {
   console.log();
 
   return (
-    <main className="flex container mx-auto gap-2">
+    <main className="flex container mx-auto gap-2 px-4">
       <aside>
         <SideBar category={category} />
       </aside>
