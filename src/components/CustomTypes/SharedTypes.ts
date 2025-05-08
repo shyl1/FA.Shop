@@ -22,3 +22,15 @@ export type Category = {
   path: string;
   label: string;
 };
+
+export type categoryTypeFetch = {
+  products: Product[];
+  loading: Loading;
+  error: null | string;
+}
+
+export const initialState : categoryTypeFetch = {
+  products : [],
+  loading: "idle",
+  error: null,
+};

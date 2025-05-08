@@ -1,5 +1,11 @@
 import { Heart , ShoppingCart ,Avatar} from "@assets/icons/svg/index";
 import {banner1, banner2,banner3,  banner4 , banner5, banner6, MenShirt1, MenShirt2, MenShirt3, Testimonials1, WomenDress } from "@assets/images";
+import { fetchAccessoriesProducts } from "@store/AccessoriesCategory/accessoriescategoryslice";
+import { fetchKidesProducts } from "@store/KidsCategory/kidscategoryslice";
+import { fetchMenProducts } from "@store/MenCategory/mencategoryslice";
+import { fetchShoeProducts } from "@store/ShoesCategory/shoecategoryslice";
+import { fetchSportswearProducts } from "@store/SportswearCategory/sportswearcategoryslice";
+import { fetchWomenProducts } from "@store/WomenCategory/womencategoryslice";
 import React from "react";
 
 
@@ -11,30 +17,40 @@ type Category = {
 
 export const categories : Category[] = [
   {
-    path: "/women",
+    path: "/category/women",
     label: "Women"
   },
   {
-    path: "/men",
+    path: "/category/men",
     label: "Men"
   },
   {
-    path: "/kids",
+    path: "/category/kids",
     label: "Kids"
   },
   {
-    path: "/shoes",
+    path: "/category/shoes",
     label: "Shoes"
   },
   {
-    path: "/accessories",
+    path: "/category/accessories",
     label: "Accessories"
   },
   {
-    path: "/sportswear",
+    path: "/category/sportswear",
     label: "Sportswear"
   },
 ];
+
+// categories thunk map
+export const categoiresThunks = {
+  women : fetchWomenProducts , 
+  men : fetchMenProducts , 
+  kids : fetchKidesProducts,
+  shoe: fetchShoeProducts,
+  accessories: fetchAccessoriesProducts , 
+  sportswear: fetchSportswearProducts,
+}
 
 // //filters for each category 
 // type CategoryFilter = {

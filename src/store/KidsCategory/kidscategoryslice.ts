@@ -1,18 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import fetchKidesProducts from "./thunk/actionGetKidsCategory";
-import { Product, Loading } from "@components/CustomTypes/SharedTypes";
-
-type kidsCategoryType  = {
-  products: Product[];
-  loading: Loading;
-  error: null | string;
-}
-
-const initialState : kidsCategoryType = {
-  products : [],
-  loading: "idle",
-  error: null,
-};
+import { initialState } from "@components/CustomTypes/SharedTypes";
 
 const kidsCategorySlice = createSlice({
   name: 'kidsCategory',

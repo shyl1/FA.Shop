@@ -3,6 +3,9 @@ import trendingProducts from "./TrendingProducts/trendingproductsSlice";
 import womenCategory from "./WomenCategory/womencategoryslice";
 import menCategory from "./MenCategory/mencategoryslice";
 import kidsCategory from "./KidsCategory/kidscategoryslice";
+import accessoricesCategory from './AccessoriesCategory/accessoriescategoryslice';
+import shoeCategory from './ShoesCategory/shoecategoryslice';
+import sportswearCategory from './SportswearCategory/sportswearcategoryslice';
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +13,9 @@ export const store = configureStore({
     womenCategory,
     menCategory,
     kidsCategory,
+    accessoricesCategory,
+    shoeCategory,
+    sportswearCategory,
   },
 })
 
