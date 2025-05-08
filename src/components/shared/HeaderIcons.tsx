@@ -1,7 +1,13 @@
 import { headerIcons } from "@Constants/index";
+import { useAppSelector } from "@store/hooks";
 import { Link } from "react-router-dom";
 
 export default function HeaderIcons() {
+
+  const {products} = useAppSelector((state)=> state.wishlist);
+
+  console.log(products.length);
+
   return (
     <>
     {
@@ -11,7 +17,7 @@ export default function HeaderIcons() {
 
           {/* Red badge on heart */}
           {
-            label === "Favorites" && badge &&(
+            label === "Favorites" && badge && products.length > 0 &&(
               <span className="absolute bg-red-500 rounded-full w-1 h-1 
               max-xxxs:top-0.25 max-xxxs:right-1 xxxs:right-1.5 top-0.5 xxs:right-2.5  right-1.5 sm:w-2 sm:h-2
               "></span>

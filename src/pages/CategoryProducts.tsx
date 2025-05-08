@@ -1,7 +1,10 @@
 import { BlackHeart } from "@assets/icons/svg";
 import { initialState } from "@components/CustomTypes/SharedTypes";
+import LoadingState from "@components/feedback/Loading/LoadingState";
+import TrendingProductsSkeleton from "@components/SkeletonLoading/TrendingProductsSkeleton";
 import { categoiresThunks } from "@Constants/index";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { addToWishlist } from "@store/WishList/wishlistslice";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom"
 
@@ -62,19 +65,19 @@ export default function CategoryProducts() {
         {/* Buttons favs and add to cart */}
         <div className="flex justify-between my-3">
             <button className="bg-yellow p-2 w-[100px] rounded cursor-pointer text-sm hover:">Add to Cart</button>
-            <button><BlackHeart className="w-8 h-8 cursor-pointer"/></button>
+            <button onClick={()=> dispatch(addToWishlist(product))}><BlackHeart className="w-8 h-8 cursor-pointer"/></button>
         </div>
     </div>
 
   )) : "No products found in this category.";
 
-
-
   return (
     <section className="w-full h-auto">
+      <LoadingState status={loading} error={error} skeleton={<TrendingProductsSkeleton/>}>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 px-4 cursor-pointer">
         {productsCategory}
       </div>
+      </LoadingState>
     </section>
   )
 }

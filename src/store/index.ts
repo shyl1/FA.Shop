@@ -6,6 +6,7 @@ import kidsCategory from "./KidsCategory/kidscategoryslice";
 import accessoricesCategory from './AccessoriesCategory/accessoriescategoryslice';
 import shoeCategory from './ShoesCategory/shoecategoryslice';
 import sportswearCategory from './SportswearCategory/sportswearcategoryslice';
+import wishlist from './WishList/wishlistslice';
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     accessoricesCategory,
     shoeCategory,
     sportswearCategory,
+    wishlist,
   },
 })
 

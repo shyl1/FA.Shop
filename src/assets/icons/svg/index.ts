@@ -6,6 +6,7 @@ import RightArrow from "./double-arrow.svg?react";
 import LeftArrow from "./double-left-arrow.svg?react";
 import DownArrow from "./down-arrow.svg?react";
 import BlackHeart from "./black-heart.svg?react";
+import TrashBin from "./trash-bin.svg?react";
 
 export {
   ShoppingCart,
@@ -16,4 +17,5 @@ export {
   LeftArrow,
   DownArrow,
   BlackHeart,
+  TrashBin,
 }

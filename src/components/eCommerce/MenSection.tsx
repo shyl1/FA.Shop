@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Heart } from "@assets/icons/svg";
 import LoadingState from "@components/feedback/Loading/LoadingState";
 import MenSectionSkeletonLoading from "@components/SkeletonLoading/MenSectionSkeletonLoading";
+import { addToWishlist } from "@store/WishList/wishlistslice";
 
 export default function MenSection() {
 
@@ -30,7 +31,7 @@ export default function MenSection() {
           {/* Buttons favs and add to cart */}
           <div className="absolute inset-0 flex justify-evenly items-center gap-2 bottom-0 opacity-0 group-hover:opacity-100 max-md:hidden">
             <button className="bg-yellow p-1 rounded cursor-pointer text-sm">Add to Cart</button>
-            <button><Heart className="w-10 h-10 cursor-pointer"/></button>
+            <button onClick={()=> dispatch(addToWishlist(product))}><Heart className="w-10 h-10 cursor-pointer"/></button>
           </div>
         </div>
 
