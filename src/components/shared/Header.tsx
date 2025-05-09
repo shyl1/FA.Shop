@@ -1,9 +1,20 @@
-import { Search } from "@assets/icons/svg/index";
-import { Link } from "react-router-dom";
+import { MenuBar, Search } from "@assets/icons/svg/index";
+import { Link, useLocation } from "react-router-dom";
 import HeaderIcons from "./HeaderIcons";
+import { useState } from "react";
+import SideBar from "./SideBar";
 
 
 export default function Header() {
+
+  const location = useLocation();
+
+  // check if the path contains (/category)
+  const isCategoryPage = location.pathname.includes('/category');
+
+  // state to track if side bar is open
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <header className="bg-blacke w-full h-16 fixed lg:p-5 p-2 top-0 z-999 ">
 
@@ -12,6 +23,8 @@ export default function Header() {
         {/* logo */}
         <Link to="/" className="text-bague max-xxxs:text-[12px] max-xxs:text-[15px] text-[20px] sm:text-[25px] text-kurale"><span className="text-yellow">FA.</span>Shop</Link>
 
+      
+
         {/* search bar */}
         <form className="ml-1 mr-1 flex relative items-center xl:w-100 lg:w-90 md:w-70  max-xxxs:w-20 xxxs:w-20 xs:w-40 sm:w-60 min-w-30">
           <input type="text"  placeholder="Search" className="input bg-bague w-full text-kurale text-[14px] md:text-[18px] max-xxxs:text-[10px]"/>
@@ -19,11 +32,27 @@ export default function Header() {
         </form>
 
         {/* header icons */}
-        <div className="flex justify-between text-bague max-xxxs:gap-0.25 sm:gap-2 max-xxs:gap-0.5 xxs:gap-1">
+        <div className="flex justify-between text-bague">
+           {/* menu bar hidden on large devices and only in category pages */}
+            {
+              isCategoryPage && (
+                <div className="sm:hidden flex mr-2">
+                  <MenuBar className="w-6 h-9 cursor-pointer" onClick={()=> setSidebarOpen((prev)=> !prev)}/>
+                </div>
+              )
+            }
           <HeaderIcons />
         </div>
-        
       </nav>
+
+      {/* Dropdown sidebar Menu (for small screens) */}
+      {
+        isSidebarOpen && isCategoryPage && (
+          <div className="sm:hidden absolute top-16 w-full bg-white left-0 h-[800px]">
+            <SideBar className="mobile"  showFilter={true} showCategory={true}/>
+          </div>
+        )
+      }
 
     </header>
   )

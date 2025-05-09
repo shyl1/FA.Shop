@@ -8,11 +8,9 @@ export default function CategoryLayout() {
   //  useParams will return an object with the params of the current route
   const {category} = useParams <{category : string}>();
 
-  console.log();
-
   return (
-    <main className="flex container mx-auto gap-2 px-4">
-      <aside>
+    <main className="flex container mx-auto gap-2 px-4 max-sm:p-0 ">
+      <aside className="max-sm:hidden">
         <SideBar category={category} />
       </aside>
       

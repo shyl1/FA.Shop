@@ -13,7 +13,7 @@ export default function HeaderIcons() {
     {
       headerIcons.map(({Icon , label , badge , quantity , path}, index) => (
         <Link to={path || "/"} key={index} className="flex flex-col items-center relative">
-          <Icon className="w-4 h-4 xs:w-5 xs:h-5 sm:w-8 sm:h-8 text-black "/>
+          <Icon className="w-8 h-8 text-black "/>
 
           {/* Red badge on heart */}
           {

@@ -5,10 +5,13 @@ import { DownArrow } from "@assets/icons/svg/index";
 
 type sidebarPropsType = {
   category? : string;
+  showFilter?: boolean;
+  showCategory?: boolean;
+  className?: string;
 }
 
 
-export default function SideBar({category} : sidebarPropsType ) {
+export default function SideBar({category , showFilter = true , showCategory = true , className = ""} : sidebarPropsType ) {
 
   //local state to manage the dropdown for each category & filters
   // to track which sections are open
@@ -16,9 +19,8 @@ export default function SideBar({category} : sidebarPropsType ) {
 
   const [openFilter , setOpenFilter] = useState(false);
 
-
   return (
-    <div className="w-[200px] h-full  max-md:ml-3 ">
+    <div className={`h-full ${className} ${className.includes("mobile") ? "w-full": "w-[200px]" }`}>
       <div>
         {/* Categories */}
         <div className="w-full h-full bg-gray-100">
