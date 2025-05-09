@@ -27,8 +27,8 @@ export default function HeaderIcons() {
           {/* showing quantity on Cart  */}
           {
             label === "Cart" && quantity && (
-              <span className="absolute top-0 right-0 w-2 h-2 rounded-full flex justify-center items-center bg-yellow text-black text-kurale
-              text-[8px] sm:w-4 sm:h-4 sm:text-[10px]
+              <span className="absolute top-0 right-0 w-3 h-3 rounded-full flex justify-center items-center bg-yellow text-black text-kurale
+              text-[8px] sm:w-4 sm:h-4 sm:text-xs
               ">{quantity}</span>
             )
           }
