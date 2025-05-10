@@ -89,6 +89,13 @@
   @apply  md:min-w-20 md:h-8 md:p-4 md:text-[18px];
 }
 
+.apply-btn:hover {
+  @apply text-black bg-yellow-400;
+}
+
+.bg-categories:hover {
+  @apply bg-[#f2f0ea];
+}
 
 /*plain css*/
 .container {

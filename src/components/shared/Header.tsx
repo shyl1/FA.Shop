@@ -2,7 +2,7 @@ import { MenuBar, Search } from "@assets/icons/svg/index";
 import { Link, useLocation } from "react-router-dom";
 import HeaderIcons from "./HeaderIcons";
 import { useState } from "react";
-import SideBar from "./SideBar";
+import SideBar from "./sidebar/SideBar";
 
 
 export default function Header() {
@@ -22,8 +22,6 @@ export default function Header() {
 
         {/* logo */}
         <Link to="/" className="text-bague max-xxxs:text-[12px] max-xxs:text-[15px] text-[20px] sm:text-[25px] text-kurale"><span className="text-yellow">FA.</span>Shop</Link>
-
-      
 
         {/* search bar */}
         <form className="ml-1 mr-1 flex relative items-center xl:w-100 lg:w-90 md:w-70  max-xxxs:w-20 xxxs:w-20 xs:w-40 sm:w-60 min-w-30">

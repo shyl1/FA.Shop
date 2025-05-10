@@ -1,4 +1,4 @@
-import SideBar from "@components/shared/SideBar";
+import SideBar from "@components/shared/sidebar/SideBar";
 import { Outlet, useParams } from "react-router-dom";
 
 
