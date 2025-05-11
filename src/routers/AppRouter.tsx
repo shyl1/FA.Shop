@@ -7,6 +7,7 @@ import Error from '@pages/Error'
 import ProductDetails from '@pages/ProductDetails'
 import CategoryLayout from '@UI/CategoryLayout'
 import CategoryProducts from '@pages/CategoryProducts'
+import Checkout from '@pages/Checkout'
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path:'shopping-cart',
         element: <ShoppingCart />,
+      },
+      {
+            path:'checkout',
+            element: <Checkout />
       },
       {
         path:'category/:category',
