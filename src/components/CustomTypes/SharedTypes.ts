@@ -39,3 +39,7 @@ export type FilterParams = {
   min?: number;
   max?:number;
 }
+
+export type cartItems = Product & {
+  quantity:number;
+}

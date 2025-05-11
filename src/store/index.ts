@@ -7,7 +7,9 @@ import accessoricesCategory from './AccessoriesCategory/accessoriescategoryslice
 import shoeCategory from './ShoesCategory/shoecategoryslice';
 import sportswearCategory from './SportswearCategory/sportswearcategoryslice';
 import wishlist from './WishList/wishlistslice';
-import priceFilter from "./SidebarFilters/PriceFilterslice"
+import priceFilter from './SidebarFilters/pricefilterslice';
+import CartItem from './Cart/cartslice';
+
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +22,7 @@ export const store = configureStore({
     sportswearCategory,
     wishlist,
     priceFilter,
+    CartItem,
   },
 })
 

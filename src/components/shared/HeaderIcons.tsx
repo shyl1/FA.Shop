@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function HeaderIcons() {
 
   const {products} = useAppSelector((state)=> state.wishlist);
+  const {items} = useAppSelector((state)=> state.CartItem);
 
   return (
     <>
@@ -23,10 +24,10 @@ export default function HeaderIcons() {
 
           {/* showing quantity on Cart  */}
           {
-            label === "Cart" && quantity && (
+            label === "Cart" && quantity && items.length > 0 && (
               <span className="absolute top-0 right-0 w-3 h-3 rounded-full flex justify-center items-center bg-yellow text-black text-kurale
               text-[8px] sm:w-4 sm:h-4 sm:text-xs
-              ">{quantity}</span>
+              ">{items.reduce((total, item) => total + item.quantity, 0)}</span>
             )
           }
 

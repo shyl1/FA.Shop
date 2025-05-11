@@ -3,6 +3,7 @@ import { initialState } from "@components/CustomTypes/SharedTypes";
 import LoadingState from "@components/feedback/Loading/LoadingState";
 import TrendingProductsSkeleton from "@components/SkeletonLoading/TrendingProductsSkeleton";
 import { categoiresThunks } from "@Constants/index";
+import { addToCart } from "@store/Cart/cartslice";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { addToWishlist } from "@store/WishList/wishlistslice";
 import { useEffect } from "react";
@@ -16,6 +17,8 @@ export default function CategoryProducts() {
   const {category} = useParams<{category: ValidCategory}>();
 
   const {priceRange} = useAppSelector(state=> state.priceFilter);
+
+  const {items} = useAppSelector((state)=> state.CartItem)
 
   const dispatch = useAppDispatch();
   // dispatch the correct category with its thunk
@@ -66,7 +69,7 @@ export default function CategoryProducts() {
 
         {/* Buttons favs and add to cart */}
         <div className="flex justify-between my-3">
-            <button className="bg-yellow p-2 w-[100px] rounded cursor-pointer text-sm hover:">Add to Cart</button>
+            <button onClick={()=> dispatch(addToCart({...product , quantity: 1}))} className="bg-yellow p-2 w-[100px] rounded cursor-pointer text-sm hover:">Add to Cart</button>
             <button onClick={()=> dispatch(addToWishlist(product))}><BlackHeart className="w-8 h-8 cursor-pointer"/></button>
         </div>
     </div>
