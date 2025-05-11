@@ -1,5 +1,5 @@
 import { TrashBin } from "@assets/icons/svg";
-import { clearCart, updateQuantity } from "@store/Cart/cartslice";
+import { clearCart, removeFromCart, updateQuantity } from "@store/Cart/cartslice";
 import { useAppDispatch, useAppSelector } from "@store/hooks"
 
 export default function CartItems() {
@@ -35,7 +35,7 @@ export default function CartItems() {
       </span>
 
       {/* remove item when sm */}
-      <span className="hidden sm:flex items-center ml-5"><button onClick={()=> dispatch(clearCart())}><TrashBin className="w-8 h-8 cursor-pointer"/></button></span>
+      <span className="hidden sm:flex items-center ml-5"><button onClick={()=> dispatch(removeFromCart(item.id))}><TrashBin className="w-8 h-8 cursor-pointer"/></button></span>
 
       {/* for below sm */}
         <div className="sm:hidden flex gap-2 flex-col">
@@ -60,7 +60,7 @@ export default function CartItems() {
             </div>
 
              {/* remove item */}
-              <span className="flex items-center ml-5"><button onClick={()=> dispatch(clearCart())}><TrashBin className="w-8 h-8 cursor-pointer"/></button></span>
+              <span className="flex items-center ml-5"><button onClick={()=> dispatch(removeFromCart(item.id))}><TrashBin className="w-8 h-8 cursor-pointer"/></button></span>
           </div>
         </div>
     </div>
