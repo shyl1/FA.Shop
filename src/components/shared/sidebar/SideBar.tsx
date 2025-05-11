@@ -3,7 +3,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { DownArrow } from "@assets/icons/svg/index";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { setPriceRange } from "@store/SidebarFilters/PriceFilterslice";
+import { resetPriceRange, setPriceRange } from "@store/SidebarFilters/PriceFilterslice";
 
 type sidebarPropsType = {
   category? : string;
@@ -26,6 +26,12 @@ export default function SideBar({category , showFilter = true , showCategory = t
   // slider for price range
   function handlePriceRange(min: string , max: string){
     dispatch(setPriceRange({min: Number(min) , max:Number(max)}));
+  }
+
+  function handleResetPriceRange(){
+    dispatch(resetPriceRange());
+    setMinPrice("0");
+    setMaxPrice("1000");
   }
 
   //select 
@@ -73,8 +79,10 @@ export default function SideBar({category , showFilter = true , showCategory = t
               <label htmlFor="maxPrice" className="text-sm">Max Price</label>
               <input type="number" id="maxPrice" value={maxPrice} placeholder="1000" onChange={(e)=> setMaxPrice(e.target.value)} className="outline-0 input bg-bague text-sm [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"/> 
               {/* button to apply changes */}
-              <div className="w-full flex justify-end mt-2">
-                <button onClick={()=> handlePriceRange(minPrice , maxPrice)} className="cursor-pointer border-0 outline-0 rounded-full py-2 px-4 text-bague bg-blacke apply-btn">apply</button>
+              <div className="w-full flex justify-end mt-2 gap-2">
+                <button className="cursor-pointer border-0 outline-0 rounded-full py-2 px-4 text-black bg-yellow reset-btn" onClick={()=>handleResetPriceRange()}>Reset</button>
+                <button onClick={()=> handlePriceRange(minPrice , maxPrice)} className="cursor-pointer border-0 outline-0 rounded-full py-2 px-4 text-bague bg-blacke apply-btn">Apply</button>
+                
               </div>
             </div>
           )} 

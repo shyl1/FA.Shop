@@ -21,9 +21,13 @@ const priceFiltersSlice = createSlice({
     setPriceRange : (state , action: PayloadAction<{min:number , max: number}> ) => {
       state.priceRange = action.payload;
     },
+    resetPriceRange: (state)=>{
+      state.priceRange = {...initialState.priceRange,};
+
+    }
   },
 });
 
-export const {setPriceRange} = priceFiltersSlice.actions;
+export const {resetPriceRange,setPriceRange} = priceFiltersSlice.actions;
 
 export default priceFiltersSlice.reducer;

@@ -76,7 +76,7 @@ export default function CategoryProducts() {
   return (
     <section className="w-full h-auto">
       <LoadingState status={loading} error={error} skeleton={<TrendingProductsSkeleton/>}>
-      <div className="grid justify-center grid-cols-[repeat(auto-fit,minmax(180px,250px))] lg:grid-cols-[repeat(auto-fit,minmax(220px,300px))]  sm:justify-start gap-6 px-4 cursor-pointer">
+      <div className="grid justify-center grid-cols-[repeat(auto-fit,minmax(180px,250px))] lg:grid-cols-[repeat(auto-fit,minmax(220px,300px))]  md:justify-start gap-6 px-4 cursor-pointer">
         {productsCategory}
       </div>
       </LoadingState>
