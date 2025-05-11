@@ -15,13 +15,15 @@ export default function CategoryProducts() {
 
   const {category} = useParams<{category: ValidCategory}>();
 
+  const {priceRange} = useAppSelector(state=> state.priceFilter);
+
   const dispatch = useAppDispatch();
   // dispatch the correct category with its thunk
   useEffect(()=> {
     if(category && categoiresThunks[category]){
-      dispatch(categoiresThunks[category]());
+      dispatch(categoiresThunks[category](priceRange));
     }
-  } , [category,dispatch]);
+  } , [category,dispatch, priceRange]);
 
   // select  products based on category
   const { products, loading, error } = useAppSelector((state) => {
@@ -74,7 +76,7 @@ export default function CategoryProducts() {
   return (
     <section className="w-full h-auto">
       <LoadingState status={loading} error={error} skeleton={<TrendingProductsSkeleton/>}>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 px-4 cursor-pointer">
+      <div className="grid justify-center grid-cols-[repeat(auto-fit,minmax(180px,250px))] lg:grid-cols-[repeat(auto-fit,minmax(220px,300px))] gap-6 px-4 cursor-pointer">
         {productsCategory}
       </div>
       </LoadingState>

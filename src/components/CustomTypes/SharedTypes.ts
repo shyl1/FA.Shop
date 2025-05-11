@@ -34,3 +34,8 @@ export const initialState : categoryTypeFetch = {
   loading: "idle",
   error: null,
 };
+
+export type FilterParams = {
+  min?: number;
+  max?:number;
+}

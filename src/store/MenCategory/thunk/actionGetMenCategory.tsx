@@ -1,15 +1,20 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { responseType } from "@components/CustomTypes/SharedTypes";
+import { FilterParams, responseType } from "@components/CustomTypes/SharedTypes";
 
-const fetchMenProducts = createAsyncThunk("menCategory/fetchMenProducts",async (_ , thunkAPI)=> {
+// for this now i will use client side filters Local filter location cus i have fixed api 
 
+
+const fetchMenProducts = createAsyncThunk("menCategory/fetchMenProducts",async (filters: FilterParams = {}, thunkAPI)=> {
+
+  const {min = 0 , max =1000} = filters;
+  
   const {rejectWithValue} = thunkAPI;
 
   try{
     const reponse = await axios.get<responseType[]>("https://fakestoreapi.com/products");
 
-    const MenProducts = reponse.data.filter((product)=> product.category === "men's clothing");
+    const MenProducts = reponse.data.filter((product)=> product.category === "men's clothing").filter((product)=> product.price>=min && product.price <= max );
 
     return MenProducts;
   } catch(error) {

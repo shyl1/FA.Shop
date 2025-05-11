@@ -12,7 +12,6 @@ type sidebarPropsType = {
   className?: string;
 }
 
-
 export default function SideBar({category , showFilter = true , showCategory = true , className = ""} : sidebarPropsType ) {
 
   //local state to manage the dropdown for each category & filters
