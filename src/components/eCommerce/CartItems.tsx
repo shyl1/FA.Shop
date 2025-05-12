@@ -1,5 +1,5 @@
 import { TrashBin } from "@assets/icons/svg";
-import { clearCart, removeFromCart, updateQuantity } from "@store/Cart/cartslice";
+import { removeFromCart, updateQuantity } from "@store/Cart/cartslice";
 import { useAppDispatch, useAppSelector } from "@store/hooks"
 
 export default function CartItems() {
@@ -25,7 +25,7 @@ export default function CartItems() {
         <div className="w-[100px] sm:w-full md:w-1/2 flex justify-between bg-bague rounded-2xl ">
           <button className="outline-0 bg-yellow p-2 rounded-2xl sm:text-2xl w-[10px] sm:w-[30px] cursor-pointer flex items-center justify-center" onClick={()=> dispatch(updateQuantity({...item , quantity: item.quantity+1 }))}>+</button>
           <span className="flex items-center font-semibold">{item.quantity}</span>
-          <button className="outline-0 bg-yellow p-2 rounded-2xl text-base sm:text-2xl w-[10px] sm:w-[30px] cursor-pointer flex items-center justify-center" onClick={()=> item.quantity > 1 ? dispatch(updateQuantity({ ...item, quantity: item.quantity - 1 })): dispatch(clearCart()) }>-</button>
+          <button className="outline-0 bg-yellow p-2 rounded-2xl text-base sm:text-2xl w-[10px] sm:w-[30px] cursor-pointer flex items-center justify-center" onClick={()=> item.quantity > 1 ? dispatch(updateQuantity({ ...item, quantity: item.quantity - 1 })): dispatch(removeFromCart(item.id)) }>-</button>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export default function CartItems() {
               <div className="w-[100px] sm:w-full md:w-1/2 flex justify-between bg-bague rounded-2xl ">
                 <button className="outline-0 bg-yellow p-2 rounded-2xl sm:text-2xl w-[10px] sm:w-[30px] cursor-pointer flex items-center justify-center" onClick={()=> dispatch(updateQuantity({...item , quantity: item.quantity+1 }))}>+</button>
                 <span className="flex items-center font-semibold">{item.quantity}</span>
-                <button className="outline-0 bg-yellow p-2 rounded-2xl text-base sm:text-2xl w-[10px] sm:w-[30px] cursor-pointer flex items-center justify-center" onClick={()=> item.quantity > 1 ? dispatch(updateQuantity({ ...item, quantity: item.quantity - 1 })): dispatch(clearCart()) }>-</button>
+                <button className="outline-0 bg-yellow p-2 rounded-2xl text-base sm:text-2xl w-[10px] sm:w-[30px] cursor-pointer flex items-center justify-center" onClick={()=> item.quantity > 1 ? dispatch(updateQuantity({ ...item, quantity: item.quantity - 1 })): dispatch(removeFromCart(item.id)) }>-</button>
               </div>
             </div>
 

@@ -74,6 +74,31 @@ export const categoiresThunks = {
 //   },
 // ];
 
+//type for coupons
+type couponListType = {
+  [code: string]: couponType;
+}
+
+type couponType = {
+  type :"fixed" | "percent";
+  value : number;
+}
+
+//coupon 
+export const couponList :couponListType = {
+  Save10: {
+    type: "fixed",
+    value : 10
+  },
+  OFF25: { 
+    type: "percent",
+    value: 0.25 
+  },
+  FREESHIP: { 
+    type: "fixed",
+    value: 20 
+  },
+}
 
 
 
