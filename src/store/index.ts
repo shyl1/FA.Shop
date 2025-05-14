@@ -9,6 +9,7 @@ import sportswearCategory from './SportswearCategory/sportswearcategoryslice';
 import wishlist from './WishList/wishlistslice';
 import priceFilter from './SidebarFilters/pricefilterslice';
 import CartItem from './Cart/cartslice';
+import checkout from './Checkout/checkoutslice'
 
 
 export const store = configureStore({
@@ -23,6 +24,7 @@ export const store = configureStore({
     wishlist,
     priceFilter,
     CartItem,
+    checkout,
   },
 })
 

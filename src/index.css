@@ -100,6 +100,12 @@
 .reset-btn:hover {
   @apply text-yellow-400 bg-black;
 }
+
+.input-form {
+  @apply border-2 border-gray-400 outline-0 p-2 rounded w-[390px];
+}
+
+
 /*plain css*/
 .container {
   max-width: 1280px;

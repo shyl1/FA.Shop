@@ -22,6 +22,7 @@
       "@UI/*": ["src/UI/*"],
       "@utils/*": ["src/utils/*"],
       "@Constants/*":["src/Constants/*"],
+      "@schemas/*" : ["src/schemas/*"],
     },
 
 
