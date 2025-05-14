@@ -55,7 +55,7 @@ export default function Header() {
       {
         isSidebarOpen && isCategoryPage && (
           <div className="sm:hidden absolute top-16 w-full bg-white left-0 h-[800px]">
-            <SideBar className="mobile"  showFilter={true} showCategory={true}/>
+            <SideBar className="mobile"  />
           </div>
         )
       }
