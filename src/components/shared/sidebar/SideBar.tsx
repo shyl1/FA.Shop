@@ -7,6 +7,8 @@ import { resetPriceRange, setPriceRange } from "@store/SidebarFilters/pricefilte
 
 type sidebarPropsType = {
   category? : string;
+  // showFilter?: boolean;
+  // showCategory?: boolean;
   className?: string;
 }
 

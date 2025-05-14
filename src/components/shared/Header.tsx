@@ -2,7 +2,7 @@ import { MenuBar, Search } from "@assets/icons/svg/index";
 import { Link, useLocation } from "react-router-dom";
 import HeaderIcons from "./HeaderIcons";
 import { useState } from "react";
-import SideBar from "./sidebar/SideBar";
+import SideBar from "./sidebar/SideBar"
 
 
 export default function Header() {
