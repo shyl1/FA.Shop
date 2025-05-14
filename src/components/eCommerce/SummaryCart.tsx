@@ -1,11 +1,15 @@
 import { couponList } from "@Constants/index";
 import { useAppSelector } from "@store/hooks"
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 export default function SummaryCart() {
 
+  const navigate = useNavigate()
+
   const {items} = useAppSelector((state)=> state.CartItem);
+
 
   // for showing coupon input
   const [showCouponInput , setShowCouponInput] = useState(false);
@@ -137,7 +141,7 @@ export default function SummaryCart() {
 
       {/* check out  */}
       <div className="flex justify-end">
-        <button className="bg-black text-yellow-400 w-[250px] cursor-pointer p-2 ">Check Out</button>
+        <button className="bg-black text-yellow-400 w-[250px] cursor-pointer p-2 " onClick={()=> navigate('/checkout')}>Check Out</button>
       </div>
     </div>
   )
