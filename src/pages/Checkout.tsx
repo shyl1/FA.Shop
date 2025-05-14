@@ -1,7 +1,12 @@
+import Breadcrumb from "@components/shared/Breadcrumb";
 
 export default function Checkout() {
   
   return (
-    <div>Checkout</div>
+    <section className="container ">
+      {/* Breadcrumb */}
+      <Breadcrumb current="Checkout"/>
+
+    </section>
   )
 }

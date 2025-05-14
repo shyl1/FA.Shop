@@ -100,7 +100,21 @@ export const couponList :couponListType = {
   },
 }
 
-
+// pages to show pagination 
+export  const pages = [
+    {
+      name: "Home",
+      path: '/',
+    },
+    {
+      name: 'Cart',
+      path:'/shopping-cart',
+    },
+    {
+      name: 'Checkout',
+      path: '/checkout',
+    }
+  ];
 
 // Define the type for headerIcons
 type HeaderIcon = {

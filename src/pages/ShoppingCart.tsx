@@ -1,5 +1,6 @@
 import CartItems from "@components/eCommerce/CartItems";
 import SummaryCart from "@components/eCommerce/SummaryCart";
+import Breadcrumb from "@components/shared/Breadcrumb";
 import { useAppSelector } from "@store/hooks";
 import { useNavigate } from "react-router-dom";
 
@@ -20,12 +21,15 @@ export default function ShoppingCart() {
   return (
     
     <section className="flex-1 container">
+
+      {/* Breadcrums */}
+      <Breadcrumb current="Cart" />
       {
         showCartDetails ? (
           <>
 
            {/* Cart and how may items the user have [Cart heading] */}
-          <div className="flex justify-center items-center mb-5">
+          <div className="flex justify-center items-center my-5">
             <h1 className="text-3xl font-bold">Your Cart <span className="text-xl font-normal">({totalQuantity} item{totalQuantity!==1 ? 's' : ''})</span></h1>
           </div>
 
