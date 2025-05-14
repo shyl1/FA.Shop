@@ -1,7 +1,7 @@
 import { couponList } from "@Constants/index";
 import { useAppSelector } from "@store/hooks"
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 export default function SummaryCart() {
