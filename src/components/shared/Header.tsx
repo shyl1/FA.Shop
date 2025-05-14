@@ -12,7 +12,7 @@ export default function Header() {
   // check if the path contains (/category)
   const isCategoryPage = location.pathname.includes('/category');
   // to hide any distraction form header for bothe shopping cart and checkout page
-  const isShoppingCartOrCheckout = location.pathname === '/shopping-cart' || location.pathname === '/checkout';
+  const isShoppingCartOrCheckout = location.pathname === '/shopping-cart' || location.pathname.startsWith('/checkout');
 
   // state to track if side bar is open
   const [isSidebarOpen, setSidebarOpen] = useState(false);

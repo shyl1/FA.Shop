@@ -7,7 +7,10 @@ import Error from '@pages/Error'
 import ProductDetails from '@pages/ProductDetails'
 import CategoryLayout from '@UI/CategoryLayout'
 import CategoryProducts from '@pages/CategoryProducts'
-import Checkout from '@pages/Checkout'
+import CheckoutLayout from '@UI/CheckoutLayout'
+import PersonalDetails from '@pages/PersonalDetails'
+import Billing from '@pages/Billing'
+import Confirmation from '@pages/Confirmation'
 
 
 const router = createBrowserRouter([
@@ -30,7 +33,21 @@ const router = createBrowserRouter([
       },
       {
         path:'checkout',
-        element: <Checkout />
+        element: <CheckoutLayout />,
+        children : [
+          {
+            index: true,
+            element: <PersonalDetails />
+          },
+          {
+            path: 'billing',
+            element: <Billing />
+          },
+          {
+            path: 'confirmation',
+            element: <Confirmation />
+          },
+        ],
       },
       {
         path:'category/:category',
