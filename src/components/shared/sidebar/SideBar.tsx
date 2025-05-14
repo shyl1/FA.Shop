@@ -72,12 +72,15 @@ export default function SideBar({category , className = ""} : sidebarPropsType )
           {/* drop down content */}
           {openFilter && (
             <div className=" flex flex-col gap-1 bg-white px-2 py-1">
+
               {/* input field for min price */}
               <label htmlFor="minPrice" className="text-sm">Min Price</label>
               <input id="minPrice" type="number" value={minPrice} placeholder="0" onChange={(e)=> setMinPrice(e.target.value)} className="outline-0 input bg-bague text-sm [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"/>
+
               {/* input field for max price */}
               <label htmlFor="maxPrice" className="text-sm">Max Price</label>
               <input type="number" id="maxPrice" value={maxPrice} placeholder="1000" onChange={(e)=> setMaxPrice(e.target.value)} className="outline-0 input bg-bague text-sm [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"/> 
+              
               {/* button to apply changes */}
               <div className="w-full flex justify-end mt-2 gap-2">
                 <button className="cursor-pointer border-0 outline-0 rounded-full py-2 px-4 text-black bg-yellow reset-btn" onClick={()=>handleResetPriceRange()}>Reset</button>

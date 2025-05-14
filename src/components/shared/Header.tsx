@@ -1,4 +1,4 @@
-import { MenuBar, Search } from "@assets/icons/svg/index";
+import { CloseSquare, MenuBar, Search } from "@assets/icons/svg/index";
 import { Link, useLocation } from "react-router-dom";
 import HeaderIcons from "./HeaderIcons";
 import { useState } from "react";
@@ -25,6 +25,8 @@ export default function Header() {
         {/* logo */}
         <Link to="/" className="text-bague max-xxxs:text-[12px] max-xxs:text-[15px] text-[20px] sm:text-[25px] text-kurale"><span className="text-yellow">FA.</span>Shop</Link>
 
+
+        {/* remove any distrcation leave only shopping option */}
         {
           !isShoppingCartOrCheckout && (
             <>
@@ -40,7 +42,13 @@ export default function Header() {
                   {
                     isCategoryPage && (
                       <div className="sm:hidden flex mr-2">
-                        <MenuBar className="w-6 h-9 cursor-pointer" onClick={()=> setSidebarOpen((prev)=> !prev)}/>
+                        {
+                          isSidebarOpen ? (
+                            <CloseSquare  className="w-6 h-9 cursor-pointer"  onClick={()=> setSidebarOpen((false))}/>
+                          ) : (
+                            <MenuBar className="w-6 h-9 cursor-pointer" onClick={()=> setSidebarOpen((true))}/>
+                          )
+                        }
                       </div>
                     )
                   }

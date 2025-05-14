@@ -8,6 +8,7 @@ import DownArrow from "./down-arrow.svg?react";
 import BlackHeart from "./black-heart.svg?react";
 import TrashBin from "./trash-bin.svg?react";
 import MenuBar from './menu-bar.svg?react';
+import CloseSquare from "./close-square.svg?react";
 
 export {
   ShoppingCart,
@@ -20,4 +21,5 @@ export {
   BlackHeart,
   TrashBin,
   MenuBar,
+  CloseSquare,
 }
