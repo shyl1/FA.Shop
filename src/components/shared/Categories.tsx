@@ -8,7 +8,7 @@ import { NavLink }  from "react-router-dom"
 export default function Categories() {
 
   // need to simulate loading for categories as its for now its static data and not fetched from api
-  const [Categories , setCategories] = useState<Category[]>([]);
+  const [categories , setCategories] = useState<Category[]>([]);
 
   const [loading , setLoading] = useState(true);
 
@@ -22,13 +22,13 @@ export default function Categories() {
   }, []);
 
   if (loading){
-    <CategoriesSkeletonLoading/>
+    return <CategoriesSkeletonLoading/>
   }
 
   return (
     <ul className="flex md:gap-4 justify-center items-center gap-1 sm:gap-2 text-kurale ">
       {
-        CategoriesLoading.map(({label, path} , index)=> (
+        categories.map(({label, path} , index)=> (
           <li key={index} >
             <NavLink to={path} className="bg-yellow main-style min-w-3 h-6 p-1 text-[10px]
             sm:min-w-20 sm:text-[14px] sm:p-3.5

@@ -18,7 +18,6 @@ export default function CategoryProducts() {
 
   const {priceRange} = useAppSelector(state=> state.priceFilter);
 
-  const {items} = useAppSelector((state)=> state.CartItem)
 
   const dispatch = useAppDispatch();
   // dispatch the correct category with its thunk

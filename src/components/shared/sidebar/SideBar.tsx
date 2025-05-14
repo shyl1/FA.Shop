@@ -3,16 +3,13 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { DownArrow } from "@assets/icons/svg/index";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { resetPriceRange, setPriceRange } from "@store/SidebarFilters/PriceFilterslice";
+import { resetPriceRange, setPriceRange } from "@store/SidebarFilters/pricefilterslice";
 
 type sidebarPropsType = {
-  category? : string;
-  showFilter?: boolean;
-  showCategory?: boolean;
   className?: string;
 }
 
-export default function SideBar({category , showFilter = true , showCategory = true , className = ""} : sidebarPropsType ) {
+export default function SideBar({className = ""} : sidebarPropsType ) {
 
   //local state to manage the dropdown for each category & filters
   // to track which sections are open
