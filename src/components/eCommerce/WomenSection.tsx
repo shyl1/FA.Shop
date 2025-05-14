@@ -16,7 +16,7 @@ export default function WomenSection() {
   // to laod all the data once the component is mounted
   useEffect(()=> {
     //action to fetch data
-    dispatch(fetchWomenProducts());
+    dispatch(fetchWomenProducts({}));
   }, [dispatch]);
 
   // to display the products

@@ -15,7 +15,7 @@ export default function KidsSection() {
   // to laod all the data once the component is mounted
   useEffect(()=> {
     //action to fetch data
-    dispatch(fetchMenProducts());
+    dispatch(fetchMenProducts({}));
   }, [dispatch]);
 
   // to display the products
