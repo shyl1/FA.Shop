@@ -102,7 +102,7 @@
 }
 
 .input-form {
-  @apply border-2 border-gray-400 outline-0 p-2 rounded w-[390px];
+  @apply border-2 outline-0 p-2 rounded w-[390px];
 }
 
 
