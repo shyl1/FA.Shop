@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios"
-import { responseType } from "@components/CustomTypes/SharedTypes";
+import { normalizeProduct, responseType } from "@components/CustomTypes/SharedTypes";
 
 
 const fetchTrendingProducts = createAsyncThunk("trendingProducts/fetchTrendingProducts" , async (_ , thunkAPI)=> {
@@ -13,7 +13,7 @@ const fetchTrendingProducts = createAsyncThunk("trendingProducts/fetchTrendingPr
     const filterdCategory = response.data.filter((product)=> product.category !== "electronics");
 
   // Sort products based on rating (descending order)
-  const products = filterdCategory.sort((a, b) => b.rating.rate - a.rating.rate);
+  const products = filterdCategory.sort((a, b) => b.rating.rate - a.rating.rate).map(normalizeProduct);
 
   return products.slice(0, 5); // Return top 6 trending products
   } catch (error) {

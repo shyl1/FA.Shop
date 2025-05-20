@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { FilterParams, responseType } from "@components/CustomTypes/SharedTypes";
+import { FilterParams, normalizeProduct, responseType } from "@components/CustomTypes/SharedTypes";
 
 
 const fetchWomenProducts = createAsyncThunk( "womenCategory/fetchWomenProducts", async(filters: FilterParams = {} , thunkAPI)=> {
@@ -14,7 +14,7 @@ const fetchWomenProducts = createAsyncThunk( "womenCategory/fetchWomenProducts",
     const response = await axios.get<responseType[]>("https://fakestoreapi.com/products");
 
     // seclecting only the products that are in women category
-    const womenProducts = response.data.filter((product)=> product.category === "women's clothing").filter((product)=> product.price>=min && product.price <= max );
+    const womenProducts = response.data.filter((product)=> product.category === "women's clothing").filter((product)=> product.price>=min && product.price <= max ).map(normalizeProduct);
 
     return womenProducts;
   } catch (error) {

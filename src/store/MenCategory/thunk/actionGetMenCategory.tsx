@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { FilterParams, responseType } from "@components/CustomTypes/SharedTypes";
+import { FilterParams, normalizeProduct, responseType } from "@components/CustomTypes/SharedTypes";
 
 // for this now i will use client side filters Local filter location cus i have fixed api 
 
@@ -14,7 +14,7 @@ const fetchMenProducts = createAsyncThunk("menCategory/fetchMenProducts",async (
   try{
     const reponse = await axios.get<responseType[]>("https://fakestoreapi.com/products");
 
-    const MenProducts = reponse.data.filter((product)=> product.category === "men's clothing").filter((product)=> product.price>=min && product.price <= max );
+    const MenProducts = reponse.data.filter((product)=> product.category === "men's clothing").filter((product)=> product.price>=min && product.price <= max ).map(normalizeProduct);
 
     return MenProducts;
   } catch(error) {

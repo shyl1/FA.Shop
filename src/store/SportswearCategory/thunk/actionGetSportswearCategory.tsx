@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { FilterParams, responseType } from "@components/CustomTypes/SharedTypes";
+import { FilterParams, normalizeProduct, responseType } from "@components/CustomTypes/SharedTypes";
 
 
 
@@ -10,7 +10,7 @@ const fetchSportswearProducts = createAsyncThunk("sportswearCategory/fetchSports
   try {
     const response = await axios.get<responseType[]>("https://fakestoreapi.com/products"); 
 
-    return response.data.filter((product)=> product.category === "men's clothing").filter((product)=> product.price>=min && product.price <= max );
+    return response.data.filter((product)=> product.category === "men's clothing").filter((product)=> product.price>=min && product.price <= max).map(normalizeProduct);
   } catch(error){
     /* to make the axios deals with the error that axios can understand use a garud*/
     if (axios.isAxiosError(error)){

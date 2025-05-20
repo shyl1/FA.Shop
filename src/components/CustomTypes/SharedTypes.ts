@@ -5,7 +5,7 @@ export type Product = {
   image: string, 
   rating:{count: number , rate: number};
   price : number;
-  description: string;
+  description?: string;
 };
 
 export type Loading = "idle" | "pending" | "failed" | "succeeded";
@@ -48,3 +48,8 @@ export type cartItems = Product & {
 
 
 export type paymentMethods = "credit" | "wallet" | "cash";
+
+export const normalizeProduct = (product: responseType): Product => ({
+  ...product,
+  description: product.description ?? "",
+});
