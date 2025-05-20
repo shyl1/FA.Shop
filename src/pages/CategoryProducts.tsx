@@ -7,7 +7,7 @@ import { addToCart } from "@store/Cart/cartslice";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { addToWishlist } from "@store/WishList/wishlistslice";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 type ValidCategory = keyof typeof categoiresThunks;
 
@@ -48,7 +48,7 @@ export default function CategoryProducts() {
   });
 
   const productsCategory = products.length > 0 ? products.map((product)=> (
-    <div key={product.id} className="custom-shadow group px-4">
+    <Link to={`/product/${product.id}`} key={product.id} className="custom-shadow group px-4">
 
       {/* image */}
       <div className=" w-full h-[200px] p-2 relative">
@@ -66,12 +66,12 @@ export default function CategoryProducts() {
           <p className="text-sm font-semibold">${product.price}</p>
         </div>
 
-        {/* Buttons favs and add to cart */}
-        <div className="flex justify-between my-3">
+        {/* Buttons favs and add to cart adding on click so when the user click on the btns it acts as a btn not a link {prevent Link on button click}*/}
+        <div className="flex justify-between my-3" onClick={(e) => e.preventDefault()}>
             <button onClick={()=> dispatch(addToCart({...product , quantity: 1}))} className="bg-yellow p-2 w-[100px] rounded cursor-pointer text-sm hover:">Add to Cart</button>
             <button onClick={()=> dispatch(addToWishlist(product))}><BlackHeart className="w-8 h-8 cursor-pointer"/></button>
         </div>
-    </div>
+    </Link>
 
   )) : "No products found in this category.";
 

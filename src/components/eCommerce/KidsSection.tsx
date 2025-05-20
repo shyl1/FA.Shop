@@ -6,6 +6,7 @@ import LoadingState from "@components/feedback/Loading/LoadingState";
 import KidsSectionSkeletonLoading from "@components/SkeletonLoading/KidsSectionSkeletonLoading";
 import { addToWishlist } from "@store/WishList/wishlistslice";
 import { addToCart } from "@store/Cart/cartslice";
+import { Link } from "react-router-dom";
 
 export default function KidsSection() {
 
@@ -20,7 +21,7 @@ export default function KidsSection() {
 
   // to display the products
   const menProducts = products.length > 0 ? products.slice(0,5).map((product)=> (
-      <div key={product.id} className="flex flex-col shadow-lg rounded-3xl p-4 w-full h-full cursor-pointer max-sm:min-w-[130px] max-md:min-w-[170px] md:min-w-[200px] group">
+      <Link to={`/product/${product.id}`} key={product.id} className="flex flex-col shadow-lg rounded-3xl p-4 w-full h-full cursor-pointer max-sm:min-w-[130px] max-md:min-w-[170px] md:min-w-[200px] group">
 
       {/* image */}
         <div className=" w-full h-[50px] md:h-[200px] max-md:h-[150px] max-sm:h-[100px] p-2 relative">
@@ -30,8 +31,10 @@ export default function KidsSection() {
           <div className="absolute inset-0 bg-black group-hover:opacity-50 rounded opacity-0 max-md:hidden"></div>
 
           {/* Buttons favs and add to cart */}
-          <div className="absolute inset-0 flex justify-evenly items-center gap-2 bottom-0 opacity-0 group-hover:opacity-100 max-md:hidden">
+          <div className="absolute inset-0 flex justify-evenly items-center gap-2 bottom-0 opacity-0 group-hover:opacity-100 max-md:hidden" onClick={(e) => e.preventDefault()}>
+            {/* add to cart */}
             <button className="bg-yellow p-1 rounded cursor-pointer text-sm" onClick={()=> dispatch(addToCart({...product , quantity: 1}))}>Add to Cart</button>
+            {/* add to wishlist */}
             <button onClick={()=> dispatch(addToWishlist(product))}><Heart className="w-10 h-10 cursor-pointer"/></button>
           </div>
         </div>
@@ -46,7 +49,7 @@ export default function KidsSection() {
         <div className="mt-2">
           <p className="text-sm font-semibold max-md:text-[10px] max-sm:text-[6px]">${product.price}</p>
         </div>
-    </div>
+    </Link>
   )) : "there are no products for now";
 
   return (
