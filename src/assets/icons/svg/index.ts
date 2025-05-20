@@ -9,6 +9,9 @@ import BlackHeart from "./black-heart.svg?react";
 import TrashBin from "./trash-bin.svg?react";
 import MenuBar from './menu-bar.svg?react';
 import CloseSquare from "./close-square.svg?react";
+import MasterCrad from "./mastercard.svg?react";
+import Wallet from "./wallet.svg?react";
+import Cash from "./hand-holding-us-dollar.svg?react";
 
 export {
   ShoppingCart,
@@ -22,4 +25,7 @@ export {
   TrashBin,
   MenuBar,
   CloseSquare,
+  MasterCrad,
+  Wallet,
+  Cash,
 }

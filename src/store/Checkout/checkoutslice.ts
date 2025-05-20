@@ -1,15 +1,16 @@
 import {PersonalDetails} from '@schemas/personalDetailsSchema';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { paymentDetails } from "@schemas/billingSchema";
 
 type checkoutState = {
   personalDetails: PersonalDetails | null;
-  //billing: {}, 
+  paymentMethodDetalis : paymentDetails | null;
 }
 
 
 const initialState: checkoutState = {
   personalDetails: null ,
-  //billing: {}, 
+  paymentMethodDetalis: null, 
 }
 
 
@@ -19,9 +20,12 @@ const checkOutSlice = createSlice({
   reducers: {
     savePersonalDetails: (state , action: PayloadAction <PersonalDetails>) => {
       state.personalDetails = action.payload;
-    }
+    },
+    savePaymentMethodDetails: (state , action: PayloadAction <paymentDetails>) => {
+    state.paymentMethodDetalis = action.payload;
+  },
   },
 });
 
-export const {savePersonalDetails} = checkOutSlice.actions;
+export const {savePersonalDetails , savePaymentMethodDetails} = checkOutSlice.actions;
 export default checkOutSlice.reducer;

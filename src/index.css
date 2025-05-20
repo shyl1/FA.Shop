@@ -105,6 +105,12 @@
   @apply border-2 outline-0 p-2 rounded w-[390px];
 }
 
+.billing-input-form {
+  @apply border-2 outline-0 p-2 rounded ;
+}
+
+/*check box reset styling*/
+
 
 /*plain css*/
 .container {

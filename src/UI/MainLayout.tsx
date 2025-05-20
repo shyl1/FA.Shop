@@ -8,8 +8,8 @@ export default function MainLayout() {
   const location = useLocation();
 
   // define routes where footer should be hidden
-  const hideFooterForRoute = ["/shopping-cart"];
-  const shouldHideFooter = hideFooterForRoute.includes(location.pathname);
+  const hideFooterForRoute = ["/shopping-cart" , "/checkout"]; ;
+  const shouldHideFooter = hideFooterForRoute.some(route => location.pathname.startsWith(route));
 
   return (
     <>

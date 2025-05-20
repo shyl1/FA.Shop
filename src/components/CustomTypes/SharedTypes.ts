@@ -43,3 +43,6 @@ export type FilterParams = {
 export type cartItems = Product & {
   quantity:number;
 }
+
+
+export type paymentMethods = "credit" | "wallet" | "cash";

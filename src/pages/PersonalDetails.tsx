@@ -50,7 +50,7 @@ export default function PersonalDetails() {
   }
 
   return (
-    <section className="container flex items-center flex-col">
+    <section className="max-w:[1280px] my-15 flex items-center flex-col">
       <form onSubmit={handleSubmit} className="custom-shadow p-5 w-[850px] flex flex-col gap-3 rounded-2xl ">
 
         <div className="flex justify-between">
