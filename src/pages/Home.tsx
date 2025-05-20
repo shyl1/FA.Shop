@@ -28,11 +28,11 @@ export default function Home() {
       </Suspense>
       
      {/* auto slider without swiper.js */}
-    <Suspense fallback={<AutoCarouselSkeletonLoading />}>
+    {/* <Suspense fallback={<AutoCarouselSkeletonLoading />}>
       <div className='mt-7 sm:mt-10'>
         <AutoCarousel />
       </div>
-    </Suspense>
+    </Suspense> */}
 
 
       <Suspense fallback={<TrendingProductsSkeleton/>}>

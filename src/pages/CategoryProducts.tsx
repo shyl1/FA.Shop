@@ -27,7 +27,7 @@ export default function CategoryProducts() {
     }
   } , [category,dispatch, priceRange]);
 
-  // select  products based on category
+  // select products based on category
   const { products, loading, error } = useAppSelector((state) => {
     switch (category) {
       case 'women':
