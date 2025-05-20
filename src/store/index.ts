@@ -10,6 +10,7 @@ import wishlist from './WishList/wishlistslice';
 import priceFilter from './SidebarFilters/pricefilterslice';
 import CartItem from './Cart/cartslice';
 import checkout from './Checkout/checkoutslice'
+import coupon from './Coupon/couponslice'
 
 
 export const store = configureStore({
@@ -25,6 +26,7 @@ export const store = configureStore({
     priceFilter,
     CartItem,
     checkout,
+    coupon,
   },
 })
 

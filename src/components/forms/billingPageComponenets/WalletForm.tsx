@@ -50,7 +50,7 @@ export default function WalletForm() {
             {/* phone number */}
             <span className="flex flex-col mb-3">
               <label htmlFor="card" className="text-sm font-bold">phone</label>
-              <input type="tel" id='card' placeholder='enter phone number' name="phone" value={formData.phone} onChange={handleChange} className={`border-gray-400  billing-input-form w-full  `} required/>
+              <input type="tel" id='card' placeholder='enter phone number' name="phone" value={formData.phone} onChange={handleChange} className={`border-gray-400 input-form w-full  `} required/>
 
               {/* show error */}
               {

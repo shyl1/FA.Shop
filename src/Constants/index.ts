@@ -86,7 +86,7 @@ type couponType = {
 
 //coupon 
 export const couponList :couponListType = {
-  Save10: {
+  SAVE10: {
     type: "fixed",
     value : 10
   },

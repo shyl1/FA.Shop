@@ -51,13 +51,13 @@ export default function PersonalDetails() {
 
   return (
     <section className="max-w:[1280px] my-15 flex items-center flex-col">
-      <form onSubmit={handleSubmit} className="custom-shadow p-5 w-[850px] flex flex-col gap-3 rounded-2xl ">
+      <form onSubmit={handleSubmit} className="custom-shadow p-5 md:w-[850px] w-full flex flex-col gap-3 rounded-2xl ">
 
-        <div className="flex justify-between">
+        <div className="flex md:justify-between md:flex-row flex-col gap-3">
           {/* first name */}
           <span className="flex flex-col">
             <label htmlFor="first" className="text-sm font-bold">First Name</label>
-            <input type="text" placeholder="first name" name="firstName" value={formData.firstName} onChange={handleChange} id="first" className={`input-form ${showError.firstName ? "border-red-500" : "border-gray-400"}`} required/>
+            <input type="text" placeholder="first name" name="firstName" value={formData.firstName} onChange={handleChange} id="first" className={`input-form md:w-[390px] ${showError.firstName ? "border-red-500" : "border-gray-400"}`} required/>
 
             {/* show first name error below */}
             {showError.firstName && (
@@ -68,7 +68,7 @@ export default function PersonalDetails() {
           {/* last name */}
           <span className="flex flex-col">
             <label htmlFor="last"  className="text-sm font-bold">Last Name</label>
-            <input type="text" placeholder="last name" name="lastName" value={formData.lastName} onChange={handleChange} id="last"  className={`input-form ${showError.lastName ? "border-red-500" : "border-gray-400"}`} required/>
+            <input type="text" placeholder="last name" name="lastName" value={formData.lastName} onChange={handleChange} id="last"  className={`input-form md:w-[390px] ${showError.lastName ? "border-red-500" : "border-gray-400"}`} required/>
 
             {/* show last name error below */}
             {showError.lastName && showError.phone.length > 0 && (
@@ -77,11 +77,11 @@ export default function PersonalDetails() {
           </span>
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex md:justify-between md:flex-row flex-col gap-3">
           {/* email */}
           <span className="flex flex-col">
             <label htmlFor="email"  className="text-sm font-bold">E-mail</label>
-            <input type="email" placeholder="e-mail" name="email" value={formData.email} onChange={handleChange} id="email"  className={`input-form ${showError.email ? "border-red-500" : "border-gray-400"}`} required/>
+            <input type="email" placeholder="e-mail" name="email" value={formData.email} onChange={handleChange} id="email"  className={`input-form md:w-[390px] ${showError.email ? "border-red-500" : "border-gray-400"}`} required/>
 
             {/* show invalid email error below */}
             {showError.email && (
@@ -92,7 +92,7 @@ export default function PersonalDetails() {
           {/* phone */}
           <span  className="flex flex-col">
             <label htmlFor="phone" className="text-sm font-bold">Phone</label>
-            <input type="text" placeholder="phone" name="phone" id="phone" value={formData.phone} onChange={handleChange} className={`input-form ${showError.phone ? "border-red-500" : "border-gray-400"}`} required/>
+            <input type="text" placeholder="phone" name="phone" id="phone" value={formData.phone} onChange={handleChange} className={`input-form md:w-[390px] ${showError.phone ? "border-red-500" : "border-gray-400"}`} required/>
 
             {/* show length of phone error below */}
             {showError.phone && (

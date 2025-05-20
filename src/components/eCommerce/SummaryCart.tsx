@@ -1,5 +1,6 @@
 import { couponList } from "@Constants/index";
-import { useAppSelector } from "@store/hooks"
+import { applyCode } from "@store/Coupon/couponslice";
+import { useAppSelector , useAppDispatch } from "@store/hooks"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,18 +16,19 @@ export default function SummaryCart() {
   const [showCouponInput , setShowCouponInput] = useState(false);
   // string value for coupon in input
   const [couponCode , setCouponCode] = useState("");
-  // already used the coupon
-  const [appliedCoupon , setAppliedCoupon] = useState<{type:string , value: number} | null>(null);
+
+  const {appliedCode} = useAppSelector(state => state.coupon);
+  const dispatch = useAppDispatch();
 
   // set error for coupon
   const [couponError , setCouponError] = useState("");
 
   // if the coupon is applied if 10$ fixed or 25% percent
   const discount = 
-    appliedCoupon?.type === "fixed" 
-    ? appliedCoupon.value 
-    : appliedCoupon?.type === "percent"
-    ? appliedCoupon.value 
+    appliedCode?.type === "fixed" 
+    ? appliedCode.value 
+    : appliedCode?.type === "percent"
+    ? appliedCode.value 
     : 0;
 
   //sub total
@@ -47,7 +49,7 @@ export default function SummaryCart() {
     function handleApplyCoupon(){
       const coupon = couponList[couponCode];
       if (coupon) {
-        setAppliedCoupon(coupon);
+        dispatch(applyCode(coupon));
         setShowCouponInput(false);
         setCouponError("");
       } else {
@@ -78,7 +80,7 @@ export default function SummaryCart() {
       {/* coupon section */}
       {/* state 1 is when there is no coupon being applied show Add Coupon */}
       {
-        !appliedCoupon && !showCouponInput && (
+        !appliedCode && !showCouponInput && (
           <div className="flex justify-between">
             <span className="font-semibold">Coupon Code:</span>
             <span>
@@ -106,12 +108,12 @@ export default function SummaryCart() {
 
       {/* if the coupon is applied */}
       {
-        appliedCoupon && (
+        appliedCode && (
           <div className="flex justify-between">
             <span className="font-semibold">Coupon Applied:</span>
-            <span>{appliedCoupon.type === 'fixed' 
-              ? `-$${appliedCoupon.value}`
-            : `-${appliedCoupon.value * 100}%`}</span>
+            <span>{appliedCode.type === 'fixed' 
+              ? `-$${appliedCode.value}`
+            : `-${appliedCode.value * 100}%`}</span>
           </div>
         )
       }

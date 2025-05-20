@@ -9,15 +9,27 @@ export default function Confirmation() {
 
   const {items} = useAppSelector(state => state.CartItem);
 
+  const {appliedCode} = useAppSelector(state => state.coupon);
+
   const location = useLocation();
   const state = location.state as LocationState;
   // If you're passing fee through location state
   const fee = state?.fee || 0;
 
+  // if the coupon is applied if 10$ fixed or 25% percent
+  const discount = 
+    appliedCode?.type === "fixed" 
+    ? appliedCode.value 
+    : appliedCode?.type === "percent"
+    ? appliedCode.value 
+    : 0;
+
   const subTotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const salesTax = subTotal * 0.1;
   const total = subTotal + salesTax;
-  const grandTotal = total + fee;
+  const grandTotal = (total  + fee) - discount;
+
+
 
   return (
     <section className="flex container flex-col justify-center items-center">
@@ -48,13 +60,19 @@ export default function Confirmation() {
               </div>
               {/* end sales tax */}
 
-
+              
               {/* shipping fee */}
               <div className="flex justify-between  items-center border-b pb-4 px-2">
                 <span className="font-semibold">Fee:</span>
                 <span> ${fee.toFixed(2)}</span>
               </div>
               {/* end shipping fee */}
+              
+              {/* coupon */}
+              <div className="flex justify-between  items-center border-b pb-4 px-2">
+                <span className="font-semibold">code:</span>
+                <span>-${discount}</span>
+              </div>
 
               {/* total */}
               <div className="flex justify-between  items-center px-2">
