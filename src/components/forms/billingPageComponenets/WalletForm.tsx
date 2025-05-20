@@ -45,7 +45,7 @@ export default function WalletForm() {
 
 
   return (
-    <div className='flex justify-start items-start w-2/5 mt-5 '>
+    <div className='flex justify-start items-start w-full sm:w-1/2 sm:mt-5 '>
         <form className='w-full p-5 custom-shadow rounded-lg flex flex-col' onSubmit={handleSubmit} autoComplete="off">
             {/* phone number */}
             <span className="flex flex-col mb-3">
@@ -61,7 +61,9 @@ export default function WalletForm() {
             </span>
 
             {/* proceed btn */}
-            <button type="submit" className="bg-yellow rounded-3xl p-2 mt-5 cursor-pointer">Proceed</button>
+            <div className="flex justify-center items-center w-full">
+              <button type="submit" className="bg-yellow rounded-3xl p-2 mt-5 cursor-pointer  w-[300px] ">Proceed</button>
+            </div>
         </form>
     </div>
   )

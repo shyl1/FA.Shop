@@ -61,7 +61,7 @@ export default function CreditCardForm() {
     }
 
   return (
-    <div className='flex justify-start items-start w-2/5 mt-5 '>
+    <div className='flex justify-start items-start w-full lg:w-1/2 mt-5 '>
         <form className='w-full p-5 custom-shadow rounded-lg flex flex-col ' onSubmit={handleSubmit} autoComplete="off">
             {/* Card number */}
             <span className="flex flex-col mb-3">
@@ -94,7 +94,7 @@ export default function CreditCardForm() {
                {/* Expiration date */}
               <span className="flex flex-col mr-2">
                 <label htmlFor="expiry" className="text-sm font-bold">Expiration date</label>
-                <input type="month" placeholder='expiry' id="expiry" name="expiry"  value={formData.expiry} onChange={handleChange} className={`border-gray-400 billing-input-form w-[200px]`} required/>
+                <input type="month" placeholder='expiry' id="expiry" name="expiry"  value={formData.expiry} onChange={handleChange} className={`border-gray-400 billing-input-form  sm:w-[200px] w-[150px]`} required/>
 
                 {/* show error for expiry */}
                 {
@@ -105,9 +105,9 @@ export default function CreditCardForm() {
               </span>
 
               {/* CVV */}
-              <span className="flex flex-col  ">
+              <span className="flex flex-col ">
                 <label htmlFor="cvv" className="text-sm font-bold">CVV</label>
-                <input type="text" placeholder='***' id='cvv' name="cvv"  value={formData.cvv} onChange={handleChange} className={`border-gray-400  billing-input-form w-[200px]`} required/>
+                <input type="text" placeholder='***' id='cvv' name="cvv"  value={formData.cvv} onChange={handleChange} className={`border-gray-400  billing-input-form sm:w-[200px] w-[150px]`} required/>
 
                 {/* show error for cvv */}
                 {
