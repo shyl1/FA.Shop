@@ -1,8 +1,10 @@
 import { CloseSquare, MenuBar, Search } from "@assets/icons/svg/index";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import HeaderIcons from "./HeaderIcons";
 import { useState } from "react";
 import SideBar from "./sidebar/SideBar"
+import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { clearSearchQuery, setSearchQuery } from "@store/Search/searchslice";
 
 
 export default function Header() {
@@ -16,6 +18,20 @@ export default function Header() {
 
   // state to track if side bar is open
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  // to read the query
+  const {query} = useAppSelector(state => state.search);
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
+
+  // handle form 
+  function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (query.trim()) {
+      navigate(`/search?query=${encodeURIComponent(query)}`);
+    }
+  }
 
   return (
     <header className="bg-blacke w-full h-16 fixed lg:p-5 p-2 top-0 z-999 ">
@@ -31,9 +47,15 @@ export default function Header() {
           !isShoppingCartOrCheckout && (
             <>
               {/* search bar */}
-              <form className="ml-1 mr-1 flex relative items-center xl:w-100 lg:w-90 md:w-70  max-xxxs:w-20 xxxs:w-20 xs:w-40 sm:w-60 min-w-30">
-                <input type="text"  placeholder="Search" className="input bg-bague w-full text-kurale text-[14px] md:text-[18px] max-xxxs:text-[10px]"/>
-                <Search className="w-4 h-4 lg:w-5 lg:h-5 absolute xl:right-3 right-3 "/>
+              <form onSubmit={handleFormSubmit} className="ml-1 mr-1 flex relative items-center xl:w-100 lg:w-90 md:w-70  max-xxxs:w-20 xxxs:w-20 xs:w-40 sm:w-60 min-w-30">
+                <input type="text"  placeholder="Search" className="input bg-bague w-full text-kurale text-[14px] md:text-[18px] max-xxxs:text-[10px]" value={query} onChange={(e)=> dispatch(setSearchQuery(e.target.value))}/>
+                
+                 {/* Only show search icon when no query */}
+                  {!query && (
+                    <Search className="w-4 h-4 lg:w-5 lg:h-5 absolute right-3 pointer-events-none text-gray-500" />
+                  )}
+
+                
               </form>
 
               {/* header icons */}

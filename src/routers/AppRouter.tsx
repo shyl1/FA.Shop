@@ -11,6 +11,7 @@ import CheckoutLayout from '@UI/CheckoutLayout'
 import PersonalDetails from '@pages/PersonalDetails'
 import Billing from '@pages/Billing'
 import Confirmation from '@pages/Confirmation'
+import SearchResults from '@pages/SearchResults'
 
 
 const router = createBrowserRouter([
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: 'product/:id',
         element: <ProductDetails />
+      },
+      {
+        path: "search",
+        element: <SearchResults />,
       },
     ],
   },
