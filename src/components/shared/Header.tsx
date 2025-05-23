@@ -4,7 +4,7 @@ import HeaderIcons from "./HeaderIcons";
 import { useState } from "react";
 import SideBar from "./sidebar/SideBar"
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { clearSearchQuery, setSearchQuery } from "@store/Search/searchslice";
+import {  setSearchQuery } from "@store/Search/searchslice";
 
 
 export default function Header() {
@@ -54,8 +54,6 @@ export default function Header() {
                   {!query && (
                     <Search className="w-4 h-4 lg:w-5 lg:h-5 absolute right-3 pointer-events-none text-gray-500" />
                   )}
-
-                
               </form>
 
               {/* header icons */}
