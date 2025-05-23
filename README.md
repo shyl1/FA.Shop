@@ -2,55 +2,54 @@
 
 - https://fashio-shop.netlify.app/
 
+## 📦 Tech Stack
 
+- **React.js** – Component-based UI library
+- **TypeScript** – Strongly typed JavaScript
+- **Tailwind CSS** – Utility-first CSS for rapid UI development
+- **Redux Toolkit** – Global state management
+- **Axios** – HTTP client for API requests
+- **Framer Motion** – Animations and transitions
 
-# React + TypeScript + Vite
+## 🧰 Key Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **🏠 Home Page**
+  - Displays highlighted categories and featured products
+  - Clean layout for quick browsing and discovery
 
-Currently, two official plugins are available:
+- **🧾 Product Detail Page**
+  - High-resolution product images, descriptions, sizes, and pricing
+  - Option to add items to cart
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **📂 Category Page**
+  - Sidebar with dynamic filters (e.g., size, price, color, type)
+  - Filterable and responsive product grid
 
-## Expanding the ESLint configuration
+- **🛒 Shopping Cart**
+  - Add, update, or remove items with instant feedback
+  - Persistent state across page reloads
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **💳 Checkout & Billing**
+  - Multi-step checkout:
+    - Personal Details
+    - Payment Method
+    - Order Confirmation
+  - Integrated form validation with **Zod**
 
-- Configure the top-level `parserOptions` property like this:
+- **💰 Payment Methods**
+  - Cash on Delivery (COD)
+  - Credit/Debit Card (with card validation)
+  - E-Wallets (UI only)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **🔍 Search Functionality**
+  - Live keyword-based product filtering
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **📱 Responsive Design**
+  - Seamlessly adapts to desktop, tablet, and mobile views
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **🎨 Smooth UI Animations**
+  - Powered by **Framer Motion** for page transitions and interactions
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **⚙️ Scalable and Modular Architecture**
+  - Type-safe development with TypeScript
+  - Clean feature-based folder structure
