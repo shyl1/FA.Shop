@@ -96,7 +96,7 @@ export default function SummaryCart() {
           <div className="flex flex-col" >
               <div className="flex bg-gray-100 rounded-2xl">
                 <input type="text" value={couponCode} onChange={(e)=> setCouponCode(e.target.value)} placeholder="Enter code" className="border-0 outline-0 py-2 px-4 flex-1"/>
-                <button className="w-[100px] bg-yellow rounded-2xl cursor-pointer text-[12px] sm:text-base" onClick={handleApplyCoupon}>Apply</button>
+                <button className="w-[100px] bg-yellow rounded-2xl cursor-pointer text-[12px] sm:text-base p-1" onClick={handleApplyCoupon}>Apply</button>
               </div>
               {/* show error if there is */}
               {couponError && (
