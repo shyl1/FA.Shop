@@ -23,32 +23,32 @@ export default function Billing() {
 
   return (
     
-    <section className='container flex items-center flex-col'>
+    <section className='container flex items-center flex-col '>
       {/* payment methods*/}
       
-      <div className='flex justify-between w-2/3 max-md:w-full p-2 '>
+      <div className='flex justify-between sm:justify-center w-2/3 max-md:w-full ml-5 mr-5'>
 
         {/* Credit Card */}
-        <label htmlFor="radio-credit" className={`custom-shadow p-2 lg:p-8 flex flex-col  justify-center items-center cursor-pointer rounded-lg w-[100px] xs:w-[150px] sm:w-[200px] m-2 ${selected === "credit" ? "border-yellow-500 border-1" : ""}`}>
+        <label htmlFor="radio-credit" className={`custom-shadow p-2 lg:p-8 flex flex-col  justify-center items-center cursor-pointer rounded-lg w-[100px] sm:w-[200px] m-2 ${selected === "credit" ? "border-yellow-500 border-1" : ""}`}>
           <input type="radio" name="payment" id="radio-credit" className="hidden" value="credit" onChange={()=> setSelected("credit")}/>
-          <MasterCrad className='w-15 h-15 sm:w-20 sm:h-20'/>
-          <span className='text-center font-medium mt-2'>Credit Card</span>
+          <MasterCrad className='w-10 h-10  sm:w-20 sm:h-20'/>
+          <span className='text-center font-medium mt-2 max-sm:text-xs'>Credit Card</span>
         </label>
 
         {/* e-wallet */}
-        <label htmlFor="radio-wallet"  className={`custom-shadow p-2 flex flex-col  justify-center items-center cursor-pointer rounded-lg w-[100px] xs:w-[150px] sm:w-[200px] m-2 ${selected === "wallet" ? "border-yellow-500 border-1" : ""}`}>
+        <label htmlFor="radio-wallet"  className={`custom-shadow p-2 flex flex-col  justify-center items-center cursor-pointer rounded-lg w-[100px] sm:w-[200px] m-2 ${selected === "wallet" ? "border-yellow-500 border-1" : ""}`}>
           <input type="radio" name="payment" id="radio-wallet" className="hidden" 
           value="wallet" onChange={()=> setSelected("wallet")}/>
-          <Wallet className='w-15 h-15 sm:w-20 sm:h-20'/>
-          <span className='text-center font-medium mt-3'>E-wallet</span>
+          <Wallet className='w-10 h-10 sm:w-20 sm:h-20'/>
+          <span className='text-center font-medium mt-3 max-sm:text-xs'>E-wallet</span>
         </label>
 
 
         {/* Cash  */}
-        <label htmlFor="radio-cash"  className={`custom-shadow p-2 flex flex-col justify-center  items-center cursor-pointer rounded-lg w-[100px] xs:w-[150px] sm:w-[200px] m-2  ${selected === "cash" ? "border-yellow-500 border-1" : ""}`}>
+        <label htmlFor="radio-cash"  className={`custom-shadow p-2 flex flex-col justify-center  items-center cursor-pointer rounded-lg w-[100px] sm:w-[200px] m-2  ${selected === "cash" ? "border-yellow-500 border-1" : ""}`}>
           <input type="radio" name="payment" id="radio-cash" className="hidden" value="cash" onChange={()=> setSelected("cash")}/>
-          <Cash className='w-15 h-15 sm:w-20 sm:h-20'/>
-          <span className='text-center font-medium mt-2'>Cash on delivery</span>
+          <Cash className='w-10 h-10 sm:w-20 sm:h-20'/>
+          <span className='text-center font-medium mt-2 max-sm:text-xs'>Cash on delivery</span>
         </label>
       </div>
 

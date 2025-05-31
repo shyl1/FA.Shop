@@ -45,7 +45,7 @@ export default function WalletForm() {
 
 
   return (
-    <div className='flex justify-start items-start w-full sm:w-1/2 sm:mt-5 '>
+    <div className='flex justify-start items-start w-full sm:w-1/2 mt-5 '>
         <form className='w-full p-5 custom-shadow rounded-lg flex flex-col' onSubmit={handleSubmit} autoComplete="off">
             {/* phone number */}
             <span className="flex flex-col mb-3">
