@@ -94,13 +94,13 @@ export default function SummaryCart() {
       {
         showCouponInput &&(
           <div className="flex flex-col" >
-              <div className="flex bg-gray-100 rounded-2xl">
+              <div className="flex flex-wrap bg-gray-100 rounded-2xl gap-2 max-sm:flex-col p-2">
                 <input type="text" value={couponCode} onChange={(e)=> setCouponCode(e.target.value)} placeholder="Enter code" className="border-0 outline-0 py-2 px-4 flex-1"/>
-                <button className="max-sm:w-full sm:w-[100px] bg-yellow sm:rounded-2xl cursor-pointer rounded p-1" onClick={handleApplyCoupon}>Apply</button>
+                <button className="w-full sm:w-[100px] bg-yellow sm:rounded-2xl cursor-pointer rounded p-1" onClick={handleApplyCoupon}>Apply</button>
               </div>
               {/* show error if there is */}
               {couponError && (
-                <p className="text-red-500 text-sm px-2">{couponError}</p>
+                <p className="text-red-500 text-sm px-2 mt-1">{couponError}</p>
               )}         
           </div>
         )
