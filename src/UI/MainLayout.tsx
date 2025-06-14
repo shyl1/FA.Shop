@@ -13,13 +13,14 @@ export default function MainLayout() {
 
   return (
     <>
-    <Header/>
-    <main className="relative">
-      {/* Render child pages dynamically */}
-      <div className="mt-24 sm:mt-28 ">
-        <Outlet/>
-      </div>
-      
+    <main className="flex flex-col justify-between min-h-screen">
+      <Header/>
+      <section className="relative">
+        {/* Render child pages dynamically */}
+        <div className="mt-24 sm:mt-28 ">
+          <Outlet/>
+        </div>
+      </section>
       {!shouldHideFooter && <Footer/>}
     </main>
     </>

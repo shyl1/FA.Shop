@@ -7,6 +7,8 @@ export default function HeaderIcons() {
   const {products} = useAppSelector((state)=> state.wishlist);
   const {items} = useAppSelector((state)=> state.CartItem);
 
+  const productList = Object.values(products);
+
   return (
     <>
     {
@@ -16,7 +18,7 @@ export default function HeaderIcons() {
 
           {/* Red badge on heart */}
           {
-            label === "Favorites" && badge && products.length > 0 &&(
+            label === "Favorites" && badge && productList.length > 0 &&(
               <span className="absolute bg-red-500 rounded-full w-2 h-2 top-0.5 right-1 sm:right-2 
               "></span>
             )

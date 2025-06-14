@@ -1,12 +1,18 @@
 import { Product } from "@components/CustomTypes/SharedTypes";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+// this is to handle the wishlist under 100 state
+// type wishlistType = {
+//   products: Product[];
+// }
+
+// for larger state management, we can use MAP Record<number, Product>[]
 type wishlistType = {
-  products: Product[];
+  products: Record<number, Product>;
 }
 
 const initialState : wishlistType = {
-  products: [],
+  products: {},
 }
 
 const wishListSlice = createSlice({
@@ -15,13 +21,16 @@ const wishListSlice = createSlice({
   reducers: {
     addToWishlist(state , action: PayloadAction<Product>){
       // check if the products exists in the wish list
-      const exists = state.products.find(product => product.id === action.payload.id);
-      if (!exists){
-        state.products.push(action.payload);
+      //const exists = state.products.find(product => product.id === action.payload.id);
+
+      const product = action.payload;
+      if(!state.products[product.id]){
+        state.products[product.id]= product; 
       }
     },
     removeFromWishlist(state , action: PayloadAction<number>){
-      state.products = state.products.filter(product => product.id !== action.payload);
+      delete state.products[action.payload];
+      //state.products = state.products.filter(product => product.id !== action.payload);
     },
   },
 });
