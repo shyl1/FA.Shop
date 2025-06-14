@@ -1,7 +1,10 @@
-import { useAppSelector } from "@store/hooks"
+import { useAppDispatch, useAppSelector } from "@store/hooks"
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence , motion } from "framer-motion";
+import { clearCart } from "@store/Cart/cartslice";
+import { setGrandTotal } from "@store/GrandTotal/grandtotalslice";
+import { resetCode } from "@store/Coupon/couponslice";
 
 type LocationState = {
   fee?: number;
@@ -38,6 +41,16 @@ export default function Confirmation() {
 
   function hanldeContinueShoppingRediretToHome(){
     navigate("/");
+  }
+
+  const dispatch = useAppDispatch();
+
+  // function to reset all function 
+  function handleResetConfirmation(){
+    dispatch(clearCart());
+    dispatch(setGrandTotal(0));
+    dispatch(resetCode());
+    setShowModal(true);
   }
 
   return (
@@ -95,7 +108,7 @@ export default function Confirmation() {
 
           {/* btn */}
           <div className="flex justify-end mt-4">
-            <button className="p-2 bg-black text-bague rounded cursor-pointer" onClick={()=> setShowModal(true)}>confirm order</button>
+            <button className="p-2 bg-black text-bague rounded cursor-pointer" onClick={handleResetConfirmation}>confirm order</button>
           </div>
       </div>
       
