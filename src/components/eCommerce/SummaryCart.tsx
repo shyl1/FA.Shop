@@ -1,5 +1,6 @@
 import { couponList } from "@Constants/index";
 import { applyCode } from "@store/Coupon/couponslice";
+import { setGrandTotal } from "@store/GrandTotal/grandtotalslice";
 import { useAppSelector , useAppDispatch } from "@store/hooks"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +23,8 @@ export default function SummaryCart() {
 
   // set error for coupon
   const [couponError , setCouponError] = useState("");
+
+  // to handle shippingg
 
   // if the coupon is applied if 10$ fixed or 25% percent
   const discount = 
@@ -143,7 +146,11 @@ export default function SummaryCart() {
 
       {/* check out  */}
       <div className="flex justify-end">
-        <button className="bg-black text-yellow-400 w-[250px] cursor-pointer p-2 " onClick={()=> navigate('/checkout')}>Check Out</button>
+        <button className="bg-black text-yellow-400 w-[250px] cursor-pointer p-2 " onClick={()=> {
+          dispatch(setGrandTotal(grandTotal));
+          navigate('/checkout');
+
+        }}>Check Out</button>
       </div>
     </div>
   )

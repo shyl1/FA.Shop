@@ -12,7 +12,8 @@ import CartItem from './Cart/cartslice';
 import checkout from './Checkout/checkoutslice';
 import coupon from './Coupon/couponslice';
 import AllProducts from "./AllProducts/allproductsslice";
-import search from "./Search/searchslice"
+import search from "./Search/searchslice";
+import grandTotal from "./GrandTotal/grandtotalslice"
 
 
 export const store = configureStore({
@@ -31,6 +32,7 @@ export const store = configureStore({
     coupon,
     AllProducts,
     search,
+    grandTotal,
   },
 })
 

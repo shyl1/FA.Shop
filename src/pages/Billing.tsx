@@ -2,9 +2,13 @@ import { Cash, MasterCrad, Wallet } from '@assets/icons/svg'
 import CashForm from '@components/forms/billingPageComponenets/CashForm';
 import CreditCardForm from '@components/forms/billingPageComponenets/CreditCardForm';
 import WalletForm from '@components/forms/billingPageComponenets/WalletForm';
+import { useAppSelector } from '@store/hooks';
 import  { useEffect, useState } from 'react'
 
 export default function Billing() {
+
+  // read grand total
+  const {grandTotal} = useAppSelector((state)=> state.grandTotal);
 
     // to show what card is clicked by default it is credit 
   const [selected , setSelected] = useState("credit");
@@ -15,11 +19,15 @@ export default function Billing() {
   useEffect(()=> {
       // fee change
     if(selected === "cash"){
-      setFee(5);
+      if(grandTotal < 1000){
+        setFee(5);
+      } else {
+        setFee(0);
+      }
     } else {
       setFee(0);
     }
-  }, [selected]);
+  }, [selected , grandTotal]);
 
   return (
     
